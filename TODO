@@ -2,10 +2,12 @@
 generating new samples, using GANs and use these sample in addition to the real data. Maybe 
 using synthetic data instead of real data might help in privacy leaking.
 
--look for new methods similar to the CDML for privacy continual learning
+-look for new methods similar to the CDML for privacy continual learning ⏳
+
+-Combine KD-CL + CDML: use the distillation loss *and* the modulating sequence ⏳
 
 -try for continual learning an approach similar to the congruent adversarial training, i.e. 
-develop a Loss function that doesnt only consider the current task but also the past samples.
+develop a Loss function that doesnt only consider the current task but also the past samples. ✅
 
 -fix the phase4 notebook beacause something is wrong in it
 
