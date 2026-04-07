@@ -1,18 +1,27 @@
--try new methods for continual learning, without focusing on privacy. For example try with
-generating new samples, using GANs and use these sample in addition to the real data. Maybe 
-using synthetic data instead of real data might help in privacy leaking.
-
 -look for new methods similar to the CDML for privacy continual learning ⏳
 
 -Combine KD-CL + CDML: use the distillation loss *and* the modulating sequence ⏳
 
--try for continual learning an approach similar to the congruent adversarial training, i.e. 
-develop a Loss function that doesnt only consider the current task but also the past samples. ✅
+-Try different attacks, for example feature extractions, model inversion ⏳
+
+-Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
+
+-Synergizing CDML with Wavelet-Guided Generative Replay Your paper correctly highlights that storing raw biometric data for replay violates privacy policies and increases storage costs. However, to further boost accuracy in complex dataset-incremental scenarios without violating the non-storage constraint, you could explore Wavelet-guided Replay (R-Tuning). Since gait data is essentially a spatio-temporal signal, you can synthesize proxy samples using Redundant Wavelet Transform (RWT) to capture low-frequency trends and high-frequency variations from past data distributions. By passing these synthetic, frequency-aware samples through the CDML, you can enrich the diversity of the training data and prevent catastrophic forgetting without ever saving real user data
+
 
 -fix the phase4 notebook beacause something is wrong in it
+
+-try new methods for continual learning, without focusing on privacy. For example try with
+generating new samples, using GANs and use these sample in addition to the real data. Maybe 
+using synthetic data instead of real data might help in privacy leaking.
 
 -Integrating Machine Unlearning for the "Right to be Forgotten". Expanding the CDML architecture to support Machine Unlearning (MU) would allow the system to selectively erase the influence of specific individuals without requiring a complete retraining of the model from scratch,. You can implement mechanisms like Privacy-Guided Memory Sculpting to intelligently target and remove sensitive features from the model's parameters while preserving essential knowledge,. To evaluate the success of this unlearning, you should subject the unlearned model to Forensic Unlearning Membership Attacks (FUMA) to verify that the process leaves no detectable gradient artifacts that an adversary could exploit
 
 -Securing Latent Representations with Geometric Regularization. If your system is eventually extended to use rehearsal buffers for advanced tasks, the uneven availability of past and present data can cause the model to overfit the memory buffer and entangle the latent representations of different individuals. You can improve the robustness of the latent space by applying regularizers like the Continual Spectral Regularizer (CaSpeR) or Lipschitz-Driven Experience Replay (LiDER), which enforce geometric constraints and ensure well-separated, robust latent embeddings
 
 -try new attacks against privacy, for example using shadow models, feature extraction attacks
+
+
+✅ DONE ✅
+-try for continual learning an approach similar to the congruent adversarial training, i.e. 
+develop a Loss function that doesnt only consider the current task but also the past samples. 
