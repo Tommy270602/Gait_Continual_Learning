@@ -4,6 +4,16 @@
 
 -Try different attacks, for example feature extractions, model inversion ⏳
 
+-Identity Inference Attacks (IIA)
+Your reference paper explicitly highlights this as a threat alongside Membership Inference Attacks.
+How it works: While an MIA asks, "Was this specific gait sequence used in training?", an IIA takes a broader view and asks, "Was this specific person (subject/class) included in the training set?".
+How to test it: You can query your target model using multiple completely unseen test sequences of a specific individual. If the model consistently outputs high confidence or specific patterns for that identity across many samples, the attacker infers the person was part of the training data. You can evaluate whether your CDML layer successfully masks identity presence as well as sample presence.
+
+-Continual Learning Data Poisoning
+Because continual learning systems update sequentially by processing new subsets of data (Task 1, Task 2, etc.), they are highly vulnerable to malicious data injection during subsequent training steps.
+Catastrophic Forgetting Attacks: An attacker could introduce specifically crafted, adversarial IMU gait sequences into Task 3. Instead of trying to make the model learn something new, these poisoned samples are mathematically optimized to aggressively overwrite the weights and intentionally cause catastrophic forgetting of Task 1 and Task 2.
+Backdoor (Trojan) Attacks: You could inject a "trigger" into the IMU data during one of the tasks (e.g., adding a specific artificial noise pattern to the 9-dimensional sensor readings). You then test if an attacker can force the model to authenticate anyone as a target user simply by applying that same IMU noise pattern, while the model continues to act normally on clean data.
+
 -Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
 
 -Synergizing CDML with Wavelet-Guided Generative Replay Your paper correctly highlights that storing raw biometric data for replay violates privacy policies and increases storage costs. However, to further boost accuracy in complex dataset-incremental scenarios without violating the non-storage constraint, you could explore Wavelet-guided Replay (R-Tuning). Since gait data is essentially a spatio-temporal signal, you can synthesize proxy samples using Redundant Wavelet Transform (RWT) to capture low-frequency trends and high-frequency variations from past data distributions. By passing these synthetic, frequency-aware samples through the CDML, you can enrich the diversity of the training data and prevent catastrophic forgetting without ever saving real user data
