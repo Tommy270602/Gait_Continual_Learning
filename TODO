@@ -1,6 +1,6 @@
--in notebook phase7, in the catastrophic attack I should test against the std with replay and not the normal standard, because the normal standard has catastrophic forgetting even without attack
+-in notebook phase7, in the backdoor attack, try with the replay std models instead of only using std 0%
 
--RUN NOTEBOOK 7 AND SEE IF IT IS CORRECT AND GIVES SOME INTERISTING RESULTS
+-try some substantially different approaches, GANs, TRANSFORMERS and so on, just to check
 
 -look for new methods similar to the CDML for privacy continual learning ⏳
 
