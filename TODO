@@ -1,5 +1,3 @@
--in notebook phase7, in the backdoor attack, try with the replay std models instead of only using std 0%
-
 -try some substantially different approaches, GANs, TRANSFORMERS and so on, just to check
 
 -look for new methods similar to the CDML for privacy continual learning ⏳
@@ -7,11 +5,6 @@
 -try new attacks against privacy, for example using shadow models, feature extraction attacks
 
 -Try different attacks, for example feature extractions, model inversion ⏳
-
--Identity Inference Attacks (IIA) ⏳
-Your reference paper explicitly highlights this as a threat alongside Membership Inference Attacks.
-How it works: While an MIA asks, "Was this specific gait sequence used in training?", an IIA takes a broader view and asks, "Was this specific person (subject/class) included in the training set?".
-How to test it: You can query your target model using multiple completely unseen test sequences of a specific individual. If the model consistently outputs high confidence or specific patterns for that identity across many samples, the attacker infers the person was part of the training data. You can evaluate whether your CDML layer successfully masks identity presence as well as sample presence.
 
 -Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
 
@@ -38,3 +31,8 @@ Backdoor (Trojan) Attacks: You could inject a "trigger" into the IMU data during
 -Synergizing CDML with Wavelet-Guided Generative Replay Your paper correctly highlights that storing raw biometric data for replay violates privacy policies and increases storage costs. However, to further boost accuracy in complex dataset-incremental scenarios without violating the non-storage constraint, you could explore Wavelet-guided Replay (R-Tuning). Since gait data is essentially a spatio-temporal signal, you can synthesize proxy samples using Redundant Wavelet Transform (RWT) to capture low-frequency trends and high-frequency variations from past data distributions. By passing these synthetic, frequency-aware samples through the CDML, you can enrich the diversity of the training data and prevent catastrophic forgetting without ever saving real user data
 
 -Securing Latent Representations with Geometric Regularization. If your system is eventually extended to use rehearsal buffers for advanced tasks, the uneven availability of past and present data can cause the model to overfit the memory buffer and entangle the latent representations of different individuals. You can improve the robustness of the latent space by applying regularizers like the Continual Spectral Regularizer (CaSpeR) or Lipschitz-Driven Experience Replay (LiDER), which enforce geometric constraints and ensure well-separated, robust latent embeddings
+
+-Identity Inference Attacks (IIA) 
+Your reference paper explicitly highlights this as a threat alongside Membership Inference Attacks.
+How it works: While an MIA asks, "Was this specific gait sequence used in training?", an IIA takes a broader view and asks, "Was this specific person (subject/class) included in the training set?".
+How to test it: You can query your target model using multiple completely unseen test sequences of a specific individual. If the model consistently outputs high confidence or specific patterns for that identity across many samples, the attacker infers the person was part of the training data. You can evaluate whether your CDML layer successfully masks identity presence as well as sample presence.
