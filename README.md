@@ -11,5 +11,5 @@ NOVEL ADDITIONS
 - Created the knowledge distillation model, adapting the RCAT loss, and comparison with the CDML
 - Combining the CDML and the Knowledge Distillation model to get an hybrid model
 - Analyzed other methods that might improve privacy, but they didn't really work out
-- Perform different attacks, both privacy related and performance degrading related, in particular IIA and Feature Space Probe are explicative
 - explored advanced methods based on frequencies of the data
+- Perform different attacks, both privacy related and performance degrading related, in particular IIA, Feature Space Probe and Backdoor attacks are explicative
