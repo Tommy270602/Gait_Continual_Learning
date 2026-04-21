@@ -13,4 +13,6 @@ NOVEL ADDITIONS
 - Analyzed other methods that might improve privacy, but they didn't really work out
 - explored advanced methods based on frequencies of the data
 - Perform different attacks, both privacy related and performance degrading related, in particular IIA, Feature Space Probe and Backdoor attacks are explicative
-- Per
+- Perform some defenses that deal with adding noise in the output of the model to defend against attacks that rely on the model outputs
+- Ablation studies on CMDL that deeply investigate how this approach differs from the standard method
+- Analyzed and investigate a Transformer + CMDL architecture and compared it to CNN + CMDL
