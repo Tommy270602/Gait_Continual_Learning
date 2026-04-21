@@ -13,3 +13,4 @@ NOVEL ADDITIONS
 - Analyzed other methods that might improve privacy, but they didn't really work out
 - explored advanced methods based on frequencies of the data
 - Perform different attacks, both privacy related and performance degrading related, in particular IIA, Feature Space Probe and Backdoor attacks are explicative
+- Per

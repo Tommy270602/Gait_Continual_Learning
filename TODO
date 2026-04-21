@@ -2,19 +2,43 @@
 
 -look for new methods similar to the CDML for privacy continual learning ⏳
 
--try new attacks against privacy, for example using shadow models, feature extraction attacks
-
 -Try different attacks, for example feature extractions, model inversion ⏳
 
--Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
-
--fix the phase4 notebook beacause something is wrong in it ⚠️
+-fix the phase4 notebook beacause something is wrong in it ⚠️   
 
 -try new methods for continual learning, without focusing on privacy. For example try with
 generating new samples, using GANs and use these sample in addition to the real data. Maybe 
 using synthetic data instead of real data might help in privacy leaking.
 
--Integrating Machine Unlearning for the "Right to be Forgotten". Expanding the CDML architecture to support Machine Unlearning (MU) would allow the system to selectively erase the influence of specific individuals without requiring a complete retraining of the model from scratch. You can implement mechanisms like Privacy-Guided Memory Sculpting to intelligently target and remove sensitive features from the model's parameters while preserving essential knowledge,. To evaluate the success of this unlearning, you should subject the unlearned model to Forensic Unlearning Membership Attacks (FUMA) to verify that the process leaves no detectable gradient artifacts that an adversary could exploit
+-1. Differential Privacy as a principled baseline
+What it is: Add DP-SGD (Abadi et al. 2016) to your training loop via the opacus library. DP provides a mathematically proven privacy guarantee (ε, δ) — something CDML cannot claim.
+Why it matters for your thesis: Right now CDML's privacy is demonstrated empirically but has no formal bound. DP gives you a formal competitor. The comparison becomes: CDML achieves similar empirical privacy to DP-SGD with ε≈3 but without the accuracy cost. That is a publishable claim. You can plot the (ε, accuracy, IIA AUC) three-way trade-off.
+pythonfrom opacus import PrivacyEngine
+privacy_engine = PrivacyEngine()
+model, optimizer, loader = privacy_engine.make_private_with_epsilon(
+    module=model, optimizer=optimizer, data_loader=loader,
+    epochs=EPOCHS, target_epsilon=3.0, target_delta=1e-5, max_grad_norm=1.0)
+Novel angle: Apply DP to the continual learning setting — does the privacy budget compound across tasks? Nobody has studied DP-SGD + sequential task training on gait data specifically.
+
+-2. Federated learning setting
+What it is: Instead of one model trained on all subjects, simulate a federated setup where each "client" holds one task's subjects. The server aggregates with FedAvg.
+Why it's different from everything you've done: Your entire pipeline assumes centralised training. Federated learning is the realistic deployment scenario for a gait authentication system — hospitals or buildings with sensors would never send raw IMU data to a central server.
+The attack surface changes completely: In federated learning the attacker is a malicious client who can inspect gradient updates, not model outputs. Implement a gradient inversion attack (Zhu et al. 2019) against your federated CDML and show whether the CDML sequence in the aggregated model still protects against it.
+This could be Phase 13 and would be genuinely novel — federated CL with CDML has not been studied.
+
+3. Completely different architecture: Transformer-based gait encoder
+What it is: Replace the 4-layer CNN with a small Transformer (4 heads, 2 layers) operating on the 6-channel IMU sequence as a sequence of timesteps.
+Why it matters: Transformers have a fundamentally different privacy profile. The attention mechanism creates explicit pairwise dependencies between timesteps, which may leak more (or less) identity information than convolutional features. Nobody knows for gait IMU data specifically. Then apply CDML to this Transformer's embedding, run your full attack battery, and compare. The question: does the richer feature space of a Transformer make it more vulnerable to IIA (more identity-discriminative features) or less (better generalisation)?
+
+4. Data-level analysis: what makes a subject vulnerable?
+What it is: This is the most under-explored dimension in your work. Instead of treating all 118 subjects equally, analyse which subjects are more vulnerable to MIA and why.
+Concrete experiments:
+
+Compute per-subject IIA AUC (you already have m_scores per subject in your IIA results)
+Correlate vulnerability with: number of training windows, intra-subject gait variance, the subject's position in the task sequence (Task 1 vs Task 4)
+Does CDML protect high-variance subjects (atypical gaits) and low-variance subjects (very consistent gaits) equally?
+
+Why this is original: Every MIA paper reports aggregate AUC. Nobody looks at the distribution of vulnerability across subjects. If Task 1 subjects (trained earliest, most forgotten) are systematically less vulnerable than Task 4 subjects (trained most recently), that is a finding about the interaction between catastrophic forgetting and privacy.
 
 
 ✅ DONE ✅
@@ -36,3 +60,9 @@ Backdoor (Trojan) Attacks: You could inject a "trigger" into the IMU data during
 Your reference paper explicitly highlights this as a threat alongside Membership Inference Attacks.
 How it works: While an MIA asks, "Was this specific gait sequence used in training?", an IIA takes a broader view and asks, "Was this specific person (subject/class) included in the training set?".
 How to test it: You can query your target model using multiple completely unseen test sequences of a specific individual. If the model consistently outputs high confidence or specific patterns for that identity across many samples, the attacker infers the person was part of the training data. You can evaluate whether your CDML layer successfully masks identity presence as well as sample presence.
+
+-try new attacks against privacy, for example using shadow models, feature extraction attacks
+
+-Integrating Machine Unlearning for the "Right to be Forgotten". Expanding the CDML architecture to support Machine Unlearning (MU) would allow the system to selectively erase the influence of specific individuals without requiring a complete retraining of the model from scratch. You can implement mechanisms like Privacy-Guided Memory Sculpting to intelligently target and remove sensitive features from the model's parameters while preserving essential knowledge,. To evaluate the success of this unlearning, you should subject the unlearned model to Forensic Unlearning Membership Attacks (FUMA) to verify that the process leaves no detectable gradient artifacts that an adversary could exploit
+
+-Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
