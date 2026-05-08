@@ -16,3 +16,4 @@ NOVEL ADDITIONS
 - Perform some defenses that deal with adding noise in the output of the model to defend against attacks that rely on the model outputs
 - Ablation studies on CMDL that deeply investigate how this approach differs from the standard method
 - Analyzed and investigate a Transformer + CMDL architecture and compared it to CNN + CMDL
+  
