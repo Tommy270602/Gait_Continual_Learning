@@ -8,7 +8,7 @@ NOTEBOOK 17
 . training su un dataset (WUGAIT) e freeze del backbone, finetuning LoRA su un altro dataset
 
 MISCELLANEOUS
-. vedere accuracy senza continual learning
+. vedere accuracy senza continual learning ✅ (fatto nel notebook17)
 . cambiare ordine dei task T4->T1,... ✅ (effettivamente cambiando l'ordine dei task nel notebook15 per wisdm si nota che comunque le labels 40-51 che corrispondevano al task4 hanno accuracy peggiore rispetto alle altre)
 
 
