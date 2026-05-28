@@ -1,13 +1,13 @@
-NOTEBOOK 16
+NOTEBOOK 16 ✅
 . provare solo LoRA, senza CDML
 . attacchi LoRa presuppondendo di sapere A,B e senza sapere A,B
-(si dovrebbe ricavare che senza CDML, LoRA ha privacy quasi nulla, come lo standard. Allo stesso modo se l'attacante non conosce A,B)
+(si dovrebbe ricavare che senza CDML, LoRA ha privacy quasi nulla, come lo standard. Al contrario se l'attacante non conosce A,B)
 
 NOTEBOOK 17
 . merging dei dataset e continual learning sul dataset tutto unito
 . training su un dataset (WUGAIT) e freeze del backbone, finetuning LoRA su un altro dataset
 
-
+MISCELLANEOUS
 . vedere accuracy senza continual learning
 . cambiare ordine dei task T4->T1,...
 
