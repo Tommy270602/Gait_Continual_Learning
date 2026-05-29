@@ -3,13 +3,15 @@ NOTEBOOK 16 ✅
 . attacchi LoRa presuppondendo di sapere A,B e senza sapere A,B
 (si dovrebbe ricavare che senza CDML, LoRA ha privacy quasi nulla, come lo standard. Al contrario se l'attacante non conosce A,B)
 
-NOTEBOOK 17
-. merging dei dataset e continual learning sul dataset tutto unito
+NOTEBOOK 17 ✅
+. vedere accuracy senza continual learning 
+
+NOTEBOOK 18 ✅
 . training su un dataset (WUGAIT) e freeze del backbone, finetuning LoRA su un altro dataset
 
 MISCELLANEOUS
-. vedere accuracy senza continual learning ✅ (fatto nel notebook17)
 . cambiare ordine dei task T4->T1,... ✅ (effettivamente cambiando l'ordine dei task nel notebook15 per wisdm si nota che comunque le labels 40-51 che corrispondevano al task4 hanno accuracy peggiore rispetto alle altre)
+. merging dei dataset e continual learning sul dataset tutto unito
 
 
 
