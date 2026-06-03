@@ -11,9 +11,16 @@ NOTEBOOK 18 ✅
 
 MISCELLANEOUS
 . cambiare ordine dei task T4->T1,... ✅ (effettivamente cambiando l'ordine dei task nel notebook15 per wisdm si nota che comunque le labels 40-51 che corrispondevano al task4 hanno accuracy peggiore rispetto alle altre)
-. merging dei dataset e continual learning sul dataset tutto unito
+
+NOTEBOOK 19 ✅
+-training su WuGAIT TASK1 -> finetuning LoRA su tutto UCI HAR TASK2 -> finetuning LoRA su tutto WISDM TASK3 (anche invertendo ordine)
+
+NOTEBOOK 20 ✅
+-unire tutti i dataset e fare classificazione su tutti i soggetti singoli
 
 
+-check codice Mamba e adattarlo al mio caso
+-check backdoor attack sui notebook perchè da gli stessi risultati in tutti i casi
 
 
 
