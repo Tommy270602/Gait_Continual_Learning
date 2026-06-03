@@ -1,17 +1,3 @@
-NOTEBOOK 16 ✅
-. provare solo LoRA, senza CDML
-. attacchi LoRa presuppondendo di sapere A,B e senza sapere A,B
-(si dovrebbe ricavare che senza CDML, LoRA ha privacy quasi nulla, come lo standard. Al contrario se l'attacante non conosce A,B)
-
-NOTEBOOK 17 ✅
-. vedere accuracy senza continual learning 
-
-NOTEBOOK 18 ✅
-. training su un dataset (WUGAIT) e freeze del backbone, finetuning LoRA su un altro dataset
-
-MISCELLANEOUS
-. cambiare ordine dei task T4->T1,... ✅ (effettivamente cambiando l'ordine dei task nel notebook15 per wisdm si nota che comunque le labels 40-51 che corrispondevano al task4 hanno accuracy peggiore rispetto alle altre)
-
 NOTEBOOK 19 ✅
 -training su WuGAIT TASK1 -> finetuning LoRA su tutto UCI HAR TASK2 -> finetuning LoRA su tutto WISDM TASK3 (anche invertendo ordine)
 
@@ -20,7 +6,12 @@ NOTEBOOK 20 ✅
 
 
 -check codice Mamba e adattarlo al mio caso
--check backdoor attack sui notebook perchè da gli stessi risultati in tutti i casi
+-check feature probe sui notebook perchè da gli stessi risultati in tutti i casi
+
+
+
+
+
 
 
 
@@ -65,3 +56,17 @@ How to test it: You can query your target model using multiple completely unseen
 -Integrating Machine Unlearning for the "Right to be Forgotten". Expanding the CDML architecture to support Machine Unlearning (MU) would allow the system to selectively erase the influence of specific individuals without requiring a complete retraining of the model from scratch. You can implement mechanisms like Privacy-Guided Memory Sculpting to intelligently target and remove sensitive features from the model's parameters while preserving essential knowledge,. To evaluate the success of this unlearning, you should subject the unlearned model to Forensic Unlearning Membership Attacks (FUMA) to verify that the process leaves no detectable gradient artifacts that an adversary could exploit
 
 -Exploring Inference-Time Defenses and Output Perturbation The CDML operates primarily at the feature embedding level. You could enlarge your defense mechanism by adding safeguards at the output level using inference-time output perturbation. Since adversaries often exploit the confidence values revealed alongside predictions to execute label-only or confidence-based attacks, you could implement prediction purification or inject calibrated adversarial noise into the final softmax likelihood arrays. This complements the CDML by ensuring that even if an attacker guesses the modulating code, the final output cannot be easily exploited.
+
+NOTEBOOK 16 ✅
+. provare solo LoRA, senza CDML
+. attacchi LoRa presuppondendo di sapere A,B e senza sapere A,B
+(si dovrebbe ricavare che senza CDML, LoRA ha privacy quasi nulla, come lo standard. Al contrario se l'attacante non conosce A,B)
+
+NOTEBOOK 17 ✅
+. vedere accuracy senza continual learning 
+
+NOTEBOOK 18 ✅
+. training su un dataset (WUGAIT) e freeze del backbone, finetuning LoRA su un altro dataset
+
+MISCELLANEOUS
+. cambiare ordine dei task T4->T1,... ✅ (effettivamente cambiando l'ordine dei task nel notebook15 per wisdm si nota che comunque le labels 40-51 che corrispondevano al task4 hanno accuracy peggiore rispetto alle altre)
