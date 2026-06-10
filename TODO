@@ -1,19 +1,30 @@
-NOTEBOOK 19 ✅
+NOTEBOOK 19 ✅ DA RIVEDERE
 -training su WuGAIT TASK1 -> finetuning LoRA su tutto UCI HAR TASK2 -> finetuning LoRA su tutto WISDM TASK3 (anche invertendo ordine)
 COMMENTO
-⚠️Risultati non coerenti con quanto ottenuto nel notebook 18 nel caso UCI HAR
+⚠️Risultati apparentemente non coerenti con quanto ottenuto nel notebook 18 nel caso UCI HAR
 🔷potrebbe essere perchè nel notebook 18 si traina per 50 epochs su ogni singolo task, mentre nel 19 si traina per 50 epochs su tutto il dataset
 🔷nota che l'accuracy di WISDM è peggiore rispetto al notebook 17 in cui trainavo solo su quello, quindi questo approccio è poco funzionale (in entrambi comunque non si tratta di continual learning)
+
 
 NOTEBOOK 20 ✅
 -unire tutti i dataset e fare classificazione su tutti i soggetti singoli
 COMMENTO
 🔷nota che l'accuracy per WuGait è più alta con questo approccio rispetto al caso del notebook 17 in cui si traina un modello solo su quel dataset. Forse avere più dati, anche se non appartengono al dataset, aiuta in quel caso. Per gli altri dataset invece le performance sono leggermente peggiori nel caso di WISDM, invece drasticamente peggiori nel caso di UCIHAR
 
-NOTEBOOK 21
+
+NOTEBOOK 21 ⚠️
 -check codice Mamba e adattarlo al mio caso 
 
+
+
+
+
+
 BLUEPRINT CAPITOLI TESI
+
+-chapter 1: introduzione
+-chapter 2 è abbastanza inutile. Si potrebbe rimuovere e dividere i contenuti nei capitoli specifici. Per esempio la parte della descrizione del dataset andare nel capitolo 3, attacchi nel capitolo 4, CDML nel capitolo 5, ecc...
+-chapter 3: introduzione dataset e rete CNN base. Mostrare risultati baseline
 -chapter 4: focus su attacchi, spiegare nei dettagli i vari attacchi che verranno poi applicati in seguito. Nota che si è già parlato degli attacchi nel chapter 2. Da vedere se questo capitolo serve, in caso abbreviare nel capitolo 2 e qui entrare nel dettaglio.
 -chapter 5: CDML, describe in details the approach and analyze results in accuracy and privacy, showing that compared to the standard model it significantly improves results
 -chapter 6: KD-CL, WGR, LiDER, ... other models. Describe the different methods in details and analyze accuracy and privacy
@@ -21,7 +32,6 @@ BLUEPRINT CAPITOLI TESI
 -chapter 8: Cross Dataset Experiments 
 
 
-🔰 cominciare a scrivere l'intro della tesi 🔰
 
 
 
