@@ -1,9 +1,14 @@
-NOTEBOOK 19 ✅ DA RIVEDERE
+NOTEBOOK 19 ✅ 
 -training su WuGAIT TASK1 -> finetuning LoRA su tutto UCI HAR TASK2 -> finetuning LoRA su tutto WISDM TASK3 (anche invertendo ordine)
 COMMENTO
 ⚠️Risultati apparentemente non coerenti con quanto ottenuto nel notebook 18 nel caso UCI HAR
 🔷potrebbe essere perchè nel notebook 18 si traina per 50 epochs su ogni singolo task, mentre nel 19 si traina per 50 epochs su tutto il dataset
 🔷nota che l'accuracy di WISDM è peggiore rispetto al notebook 17 in cui trainavo solo su quello, quindi questo approccio è poco funzionale (in entrambi comunque non si tratta di continual learning)
+
+The model is first trained on WuGait, and its core "backbone" weights are completely frozen.
+Using that frozen base, the model learns the two new datasets (UCI HAR and WISDM) completely independently.
+While it uses the general knowledge from WuGait, the LoRA adapters for the new datasets start completely from scratch, sharing zero knowledge with each other.
+This establishes the benchmark scores (50.44% and 91.88%) to prove whether transferring adapter knowledge in later experiments actually improves performance.
 
 
 NOTEBOOK 20 ✅
@@ -15,7 +20,8 @@ COMMENTO
 NOTEBOOK 21 ⚠️
 -check codice Mamba e adattarlo al mio caso 
 
-
+NOTEBOOK 3B ✅
+fare check inference supponendo che il classifier non sappia di preciso quale è il seed, ma abbia il pool di seed possibili. Li prova tutti e il seed giusto dovrebbe avere la likelihood maggiore.
 
 
 
