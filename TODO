@@ -1,4 +1,4 @@
-NOTEBOOK 19 ✅ 
+NOTEBOOK 19 ✅ RIVISTI RISULTATI
 -training su WuGAIT TASK1 -> finetuning LoRA su tutto UCI HAR TASK2 -> finetuning LoRA su tutto WISDM TASK3 (anche invertendo ordine)
 COMMENTO
 ⚠️Risultati apparentemente non coerenti con quanto ottenuto nel notebook 18 nel caso UCI HAR
@@ -10,13 +10,6 @@ Using that frozen base, the model learns the two new datasets (UCI HAR and WISDM
 While it uses the general knowledge from WuGait, the LoRA adapters for the new datasets start completely from scratch, sharing zero knowledge with each other.
 This establishes the benchmark scores (50.44% and 91.88%) to prove whether transferring adapter knowledge in later experiments actually improves performance.
 
-
-NOTEBOOK 20 ✅
--unire tutti i dataset e fare classificazione su tutti i soggetti singoli
-COMMENTO
-🔷nota che l'accuracy per WuGait è più alta con questo approccio rispetto al caso del notebook 17 in cui si traina un modello solo su quel dataset. Forse avere più dati, anche se non appartengono al dataset, aiuta in quel caso. Per gli altri dataset invece le performance sono leggermente peggiori nel caso di WISDM, invece drasticamente peggiori nel caso di UCIHAR
-
-
 NOTEBOOK 21 ⚠️
 -check codice Mamba e adattarlo al mio caso 
 
@@ -24,6 +17,9 @@ NOTEBOOK 3B ✅
 fare check inference supponendo che il classifier non sappia di preciso quale è il seed, ma abbia il pool di seed possibili. Li prova tutti e il seed giusto dovrebbe avere la likelihood maggiore.
 
 
+⚠️CHECK SE QUANDO USO UCIHAR CONSIDERO SOLO WALKING O TUTTE LE ATTIVITA'
+
+🔰add notebook 3b considerations in cdml chapter
 
 
 BLUEPRINT CAPITOLI TESI
@@ -36,6 +32,9 @@ BLUEPRINT CAPITOLI TESI
 -chapter 6: KD-CL, WGR, LiDER, ... other models. Describe the different methods in details and analyze accuracy and privacy
 -chapter 7: LoRA. focus su tutte le architetture provate con il LoRA e i risultati
 -chapter 8: Cross Dataset Experiments 
+-conclusions
+-references
+-add list of figures and list of acronyms at the beginning
 
 
 
@@ -109,3 +108,8 @@ MISCELLANEOUS
 🔷In Attack B, the attacker uses a k-NN classifier on the embeddings.
 If the code calls model.zero_sequence() for the "no-seed" scenario, it multiplies the backbone embedding h by 0 (m=h ⊙ s_k). This makes every single embedding an all-zero vector, regardless of the input image or the model used.
 When you fit a k-NN on identical all-zero vectors, it will simply default to predicting the most frequent class or the first class it saw in the training set. If that class happens to belong to Task 3, it explains why you get a consistent 3.9% on Task 3 and 0.0% everywhere else across all models.
+
+NOTEBOOK 20 ✅
+-unire tutti i dataset e fare classificazione su tutti i soggetti singoli
+COMMENTO
+🔷nota che l'accuracy per WuGait è più alta con questo approccio rispetto al caso del notebook 17 in cui si traina un modello solo su quel dataset. Forse avere più dati, anche se non appartengono al dataset, aiuta in quel caso. Per gli altri dataset invece le performance sono leggermente peggiori nel caso di WISDM, invece drasticamente peggiori nel caso di UCIHAR
