@@ -10,7 +10,7 @@ Using that frozen base, the model learns the two new datasets (UCI HAR and WISDM
 While it uses the general knowledge from WuGait, the LoRA adapters for the new datasets start completely from scratch, sharing zero knowledge with each other.
 This establishes the benchmark scores (50.44% and 91.88%) to prove whether transferring adapter knowledge in later experiments actually improves performance.
 
-NOTEBOOK 21 ⚠️
+NOTEBOOK 21 ✅
 -check codice Mamba e adattarlo al mio caso 
 
 NOTEBOOK 3B ✅
