@@ -233,9 +233,9 @@ def load_wisdm(cfg):
                     if not line or not line[0].isdigit():
                         continue
                     parts = line.split(',')
-                    if len(parts) >= 4:
+                    if len(parts) >= 6:
                         try:
-                            rows.append([float(p.strip()) for p in parts[1:4]])
+                            rows.append([float(p.strip()) for p in parts[3:6]])
                         except ValueError:
                             pass
             if rows:
