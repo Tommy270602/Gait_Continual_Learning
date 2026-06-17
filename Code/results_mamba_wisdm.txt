@@ -1,0 +1,157 @@
+======================================================================
+  DATASET: WISDM (Subject ID)
+======================================================================
+
+[1/6] Loading data...
+  Train: (28806, 6, 200)  Test: (7202, 6, 200)
+[2/6] Building task datasets...
+  Task 1: 6075 train | 1071 val | 1785 test
+  Task 2: 6189 train | 1092 val | 1826 test
+  Task 3: 6151 train | 1085 val | 1807 test
+  Task 4: 6072 train | 1071 val | 1784 test
+[3/6] Training strategies...
+
+  --- Mamba-CDML ---
+[Mamba-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.419
+  Epoch  25/50  val=0.910
+  Epoch  50/50  val=0.953
+  -> T1:95.8%
+[Mamba-CDML] Step 2/4: Task 2
+  Epoch   1/50  val=0.571
+  Epoch  25/50  val=0.966
+  Epoch  50/50  val=0.974
+  -> T1:15.9%  T2:98.0%
+[Mamba-CDML] Step 3/4: Task 3
+  Epoch   1/50  val=0.466
+  Epoch  25/50  val=0.945
+  Epoch  50/50  val=0.967
+  -> T1:12.0%  T2:21.5%  T3:97.7%
+[Mamba-CDML] Step 4/4: Task 4
+  Epoch   1/50  val=0.754
+  Epoch  25/50  val=0.975
+  Epoch  50/50  val=0.980
+  -> T1:5.9%  T2:15.3%  T3:18.6%  T4:98.7%
+
+  --- Mamba-CDML+LoRA ---
+[Mamba-CDML+LoRA] Step 1/4: Task 1
+  Full model: 28,987 params
+  Epoch   1/50  val=0.422
+  Epoch  25/50  val=0.914
+  Epoch  50/50  val=0.951
+  -> T1:95.3%
+[Mamba-CDML+LoRA] Step 2/4: Task 2
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.232
+  Epoch  25/50  val=0.481
+  Epoch  50/50  val=0.499
+  -> T1:95.3%  T2:49.7%
+[Mamba-CDML+LoRA] Step 3/4: Task 3
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.200
+  Epoch  25/50  val=0.464
+  Epoch  50/50  val=0.493
+  -> T1:95.3%  T2:49.7%  T3:50.5%
+[Mamba-CDML+LoRA] Step 4/4: Task 4
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.328
+  Epoch  25/50  val=0.647
+  Epoch  50/50  val=0.670
+  -> T1:95.3%  T2:49.7%  T3:50.5%  T4:66.4%
+
+  --- Mamba-WGR-CDML ---
+[Mamba-WGR-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.412
+  Epoch  25/50  val=0.911
+  Epoch  50/50  val=0.962
+  -> T1:95.5%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[Mamba-WGR-CDML] Step 2/4: Task 2
+  + 390 synthetic replay samples
+  Epoch   1/50  val=0.599
+  Epoch  25/50  val=0.964
+  Epoch  50/50  val=0.975
+  -> T1:16.6%  T2:98.0%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[Mamba-WGR-CDML] Step 3/4: Task 3
+  + 750 synthetic replay samples
+  Epoch   1/50  val=0.594
+  Epoch  25/50  val=0.953
+  Epoch  50/50  val=0.965
+  -> T1:21.2%  T2:16.2%  T3:97.5%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[Mamba-WGR-CDML] Step 4/4: Task 4
+  + 1140 synthetic replay samples
+  Epoch   1/50  val=0.699
+  Epoch  25/50  val=0.973
+  Epoch  50/50  val=0.949
+  -> T1:13.5%  T2:11.3%  T3:24.7%  T4:96.1%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+  --- Mamba-WGR-CDML+LoRA ---
+[Mamba-WGR-CDML+LoRA] Step 1/4: Task 1
+  Full model: 28,987 params
+  Epoch   1/50  val=0.422
+  Epoch  25/50  val=0.914
+  Epoch  50/50  val=0.951
+  -> T1:95.3%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[Mamba-WGR-CDML+LoRA] Step 2/4: Task 2
+  + 390 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.254
+  Epoch  25/50  val=0.475
+  Epoch  50/50  val=0.501
+  -> T1:95.3%  T2:50.7%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[Mamba-WGR-CDML+LoRA] Step 3/4: Task 3
+  + 750 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.210
+  Epoch  25/50  val=0.480
+  Epoch  50/50  val=0.493
+  -> T1:95.3%  T2:50.7%  T3:50.4%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[Mamba-WGR-CDML+LoRA] Step 4/4: Task 4
+  + 1140 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.373
+  Epoch  25/50  val=0.669
+  Epoch  50/50  val=0.665
+  -> T1:95.3%  T2:50.7%  T3:50.4%  T4:66.7%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+[4/6] Running Attack A (IIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.383
+  Mamba-CDML [oracle]  avg AUC=0.833
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.324
+  Mamba-CDML+LoRA [oracle]  avg AUC=1.000
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.413
+  Mamba-WGR-CDML [oracle]  avg AUC=0.770
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.324
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.978
+
+[5/6] Running Attack B (FSI)...
+  Mamba-CDML [no_seed]  avg k-NN acc=0.915
+  Mamba-CDML [oracle]  avg k-NN acc=0.915
+  Mamba-CDML+LoRA [no_seed]  avg k-NN acc=0.949
+  Mamba-CDML+LoRA [oracle]  avg k-NN acc=0.949
+  Mamba-WGR-CDML [no_seed]  avg k-NN acc=0.954
+  Mamba-WGR-CDML [oracle]  avg k-NN acc=0.954
+  Mamba-WGR-CDML+LoRA [no_seed]  avg k-NN acc=0.949
+  Mamba-WGR-CDML+LoRA [oracle]  avg k-NN acc=0.949
+
+[6/6] Running Attack C (Backdoor)...
+  [Mamba-CDML] Backdoor: clean_acc=0.947  ASR=0.784
+  [Mamba-CDML+LoRA] Backdoor: clean_acc=0.964  ASR=0.840
+  [Mamba-WGR-CDML] Backdoor: clean_acc=0.958  ASR=0.804
+  [Mamba-WGR-CDML+LoRA] Backdoor: clean_acc=0.966  ASR=0.790
+
+───────────────────────────────────────────────────────
+  Summary — WISDM (Subject ID)
+  Strategy                     Avg Acc      BWT
+  ─────────────────────────────────────────────
+  Mamba-CDML                    34.64%  -83.88%
+  Mamba-CDML+LoRA               65.48%    0.00%
+  Mamba-WGR-CDML                36.41%  -80.48%
+  Mamba-WGR-CDML+LoRA           65.77%    0.00%
