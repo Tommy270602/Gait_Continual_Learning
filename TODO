@@ -13,13 +13,12 @@ NOTEBOOK 3C ✅
 BLUEPRINT CAPITOLI TESI
 
 -chapter 1: introduzione
--chapter 2 è abbastanza inutile. Si potrebbe rimuovere e dividere i contenuti nei capitoli specifici. Per esempio la parte della descrizione del dataset andare nel capitolo 3, attacchi nel capitolo 4, CDML nel capitolo 5, ecc...
--chapter 3: introduzione dataset e rete CNN base. Mostrare risultati baseline
--chapter 4: focus su attacchi, spiegare nei dettagli i vari attacchi che verranno poi applicati in seguito. Nota che si è già parlato degli attacchi nel chapter 2. Da vedere se questo capitolo serve, in caso abbreviare nel capitolo 2 e qui entrare nel dettaglio.
--chapter 5: CDML, describe in details the approach and analyze results in accuracy and privacy, showing that compared to the standard model it significantly improves results
--chapter 6: KD-CL, WGR, LiDER, ... other models. Describe the different methods in details and analyze accuracy and privacy
--chapter 7: LoRA. focus su tutte le architetture provate con il LoRA e i risultati
--chapter 8: Cross Dataset Experiments 
+-chapter 2: introduzione dataset e rete CNN base. Mostrare risultati baseline
+-chapter 3: focus su attacchi, spiegare nei dettagli i vari attacchi che verranno poi applicati in seguito. Nota che si è già parlato degli attacchi nel chapter 2. Da vedere se questo capitolo serve, in caso abbreviare nel capitolo 2 e qui entrare nel dettaglio.
+-chapter 4: CDML, describe in details the approach and analyze results in accuracy and privacy, showing that compared to the standard model it significantly improves results
+-chapter 5: KD-CL, WGR, LiDER, ... other models. Describe the different methods in details and analyze accuracy and privacy
+-chapter 6: LoRA. focus su tutte le architetture provate con il LoRA e i risultati
+-chapter 7: Cross Dataset Experiments 
 -conclusions
 -references
 -add list of figures and list of acronyms at the beginning
