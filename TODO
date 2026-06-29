@@ -1,13 +1,11 @@
 NOTEBOOK 3C ✅ 
 -test 3b su cdml+lora 
+-plot delle varie likelihood per task per seed.
 
+✅RUNNARE TUTTI I TEST CON MIA (manca MAMBA)
 
--test 3b plot delle varie likelihood per task per seed. Scegliere il seed non in base al max ma in base alla differenza dal secondo migliore
-
-⚠️RUNNARE TUTTI I TEST CON MIA 
-
-✅ add notebook 3b considerations in cdml chapter
-🔰add chapter on Mamba
+🔰 add chapter on Mamba
+🔰 add conclusions
 
 BLUEPRINT CAPITOLI TESI
 
