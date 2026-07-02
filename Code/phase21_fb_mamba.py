@@ -197,17 +197,25 @@ def load_ucihar(cfg):
     def _split(d, split):
         axes = ['total_acc_x', 'total_acc_y', 'total_acc_z',
                 'body_gyro_x', 'body_gyro_y', 'body_gyro_z']
-        X = np.stack([
+        X   = np.stack([
             np.loadtxt(f'{d}/{split}/Inertial Signals/{a}_{split}.txt')
             for a in axes], axis=1).astype(np.float32)
-        y = np.loadtxt(f'{d}/{split}/subject_{split}.txt', dtype=int)
-        return X, y
-    X_tr, y_tr = _split(cfg['data_dir'], 'train')
-    X_te, y_te = _split(cfg['data_dir'], 'test')
+        y   = np.loadtxt(f'{d}/{split}/subject_{split}.txt', dtype=int)
+        act = np.loadtxt(f'{d}/{split}/y_{split}.txt',       dtype=int)
+        return X, y, act
+    X_tr, y_tr, act_tr = _split(cfg['data_dir'], 'train')
+    X_te, y_te, act_te = _split(cfg['data_dir'], 'test')
     # ↓ FIX: original split separates subjects entirely (activity-recognition design).
     # For subject-ID, pool everything and re-split stratified by subject, like WISDM.
-    X_all = np.concatenate([X_tr, X_te], axis=0)
-    y_all = np.concatenate([y_tr, y_te], axis=0)
+    X_all   = np.concatenate([X_tr, X_te], axis=0)
+    y_all   = np.concatenate([y_tr, y_te], axis=0)
+    act_all = np.concatenate([act_tr, act_te], axis=0)
+    # Walking-only filter (1=WALKING, 2=WALKING_UPSTAIRS, 3=WALKING_DOWNSTAIRS)
+    walk_mask = np.isin(act_all, [1, 2, 3])
+    X_all     = X_all[walk_mask]
+    y_all     = y_all[walk_mask]
+    print(f'  UCI HAR walking-only: {walk_mask.sum()} / {len(walk_mask)} windows '
+          f'({100*walk_mask.mean():.1f}%)')
     X_tr, X_te, y_tr, y_te = train_test_split(
         X_all, y_all, test_size=0.2, random_state=RANDOM_SEED, stratify=y_all)
     mu  = X_tr.mean(axis=(0, 2), keepdims=True)
@@ -1126,6 +1134,63 @@ def run_backdoor(ModelClass, task_data, task_names, cfg, device,
 print('Attack A (IIA), B (FSI), C (Backdoor) defined.')
 
 
+# ── Attack A₂ — Membership Inference Attack (MIA) ────────────────────────
+# Threshold-based MIA (Yeom et al. 2018).
+# Score: s(x,y) = -CE(f(x), y)  — lower loss = more likely a training member.
+# Members   = randomly sampled training windows per task.
+# Non-members = randomly sampled test windows from the SAME task
+#              (same subjects, unseen windows — hardest setting for the attacker).
+def run_mia(model, task_data, task_names, device,
+            is_lora=False, cdml_mode='no_seed', n_samples=200):
+    results = {}
+    for t_idx, task_name in enumerate(task_names):
+        if cdml_mode == 'oracle':
+            model.set_task_sequence(task_name, CDML_SEED_BASE + t_idx)
+        else:
+            model.zero_sequence()
+        if is_lora:
+            model.load_lora(task_name)
+
+        train_ds = task_data[task_name]['train']
+        test_ds  = task_data[task_name]['test']
+
+        rng     = np.random.default_rng(RANDOM_SEED + 77 + t_idx)
+        n_mem   = min(n_samples, len(train_ds))
+        n_non   = min(n_samples, len(test_ds))
+        mem_idx = rng.choice(len(train_ds), n_mem, replace=False)
+        non_idx = rng.choice(len(test_ds),  n_non, replace=False)
+
+        model.eval()
+        with torch.no_grad():
+            X_mem = torch.stack([train_ds[int(i)][0] for i in mem_idx]).to(device)
+            y_mem = torch.stack([train_ds[int(i)][1] for i in mem_idx]).to(device)
+            losses_mem = nn.CrossEntropyLoss(reduction='none')(
+                model(X_mem), y_mem).cpu().float().numpy()
+
+            X_non = torch.stack([test_ds[int(i)][0] for i in non_idx]).to(device)
+            y_non = torch.stack([test_ds[int(i)][1] for i in non_idx]).to(device)
+            losses_non = nn.CrossEntropyLoss(reduction='none')(
+                model(X_non), y_non).cpu().float().numpy()
+
+        m_arr  = -losses_mem    # higher = lower loss = more likely member
+        nm_arr = -losses_non
+        scores = np.concatenate([m_arr, nm_arr])
+        labels_arr = np.concatenate([np.ones(len(m_arr)), np.zeros(len(nm_arr))])
+        fpr, tpr, _ = roc_curve(labels_arr, scores)
+        roc_auc     = sk_auc(fpr, tpr)
+        fnr         = 1 - tpr
+        eer_idx     = np.nanargmin(np.abs(fpr - fnr))
+        eer         = float(np.mean([fpr[eer_idx], fnr[eer_idx]]))
+        results[task_name] = {
+            'auc': roc_auc, 'eer': eer,
+            'fpr': fpr,     'tpr': tpr,
+            'm_scores': m_arr, 'nm_scores': nm_arr,
+        }
+    return results
+
+print('Attack A₂ (MIA) defined.')
+
+
 # In[137]:
 
 
@@ -1190,6 +1255,21 @@ def run_experiments(ds_name, cfg, device, epochs=None):
                               is_lora=is_lora, cdml_mode=mode)
             results[label][f'iia_{mode}'] = iia_res
             avg_auc = np.mean([r['auc'] for r in iia_res.values()])
+            print(f'  {label} [{mode}]  avg AUC={avg_auc:.3f}')
+        # Restore model state
+        if is_lora:
+            model.load_lora(task_names[-1])
+        model.set_task_sequence(task_names[-1], CDML_SEED_BASE + len(task_names) - 1)
+
+    # Attack A₂ — MIA
+    print('\n[4b/6] Running Attack A\u2082 (MIA)...')
+    for label, _, _, is_lora in STRATEGY_REGISTRY:
+        model = results[label]['model']
+        for mode in ('no_seed', 'oracle'):
+            mia_res = run_mia(model, task_data, task_names, device,
+                              is_lora=is_lora, cdml_mode=mode)
+            results[label][f'mia_{mode}'] = mia_res
+            avg_auc = np.mean([r['auc'] for r in mia_res.values()])
             print(f'  {label} [{mode}]  avg AUC={avg_auc:.3f}')
         # Restore model state
         if is_lora:
@@ -1352,9 +1432,9 @@ def plot_attacks(ds_results, ds_name):
     task_names = ds_results['_meta']['task_names']
     task_x     = [f'T{i+1}' for i in range(len(task_names))]
 
-    fig = plt.figure(figsize=(18, 10))
+    fig = plt.figure(figsize=(18, 14))
     fig.suptitle(f'{cfg["name"]} — Privacy attacks', fontsize=13, fontweight='bold')
-    gs  = gridspec.GridSpec(2, 4, figure=fig)
+    gs  = gridspec.GridSpec(3, 4, figure=fig)
 
     # IIA AUC — no_seed
     ax = fig.add_subplot(gs[0, 0])
@@ -1427,6 +1507,40 @@ def plot_attacks(ds_results, ds_name):
     ax.set_title('Backdoor — Clean accuracy vs Attack Success Rate (ASR)\n'
                  '(lower ASR with maintained clean acc = better defence)')
     ax.set_ylabel('%'); ax.set_ylim(0, 115); ax.legend(fontsize=9)
+
+    # MIA AUC — no_seed
+    ax = fig.add_subplot(gs[2, 0])
+    ax.axhline(0.5, ls='--', color='gray', alpha=0.6, label='Random (0.5)')
+    for label in STRATEGIES:
+        vals = [ds_results[label]['mia_no_seed'][t]['auc'] for t in task_names]
+        ax.plot(task_x, vals, color=MODEL_COLORS[label], marker='o', lw=2, label=label)
+    ax.set_title('MIA \u2014 AUC (no-seed)'); ax.set_ylabel('AUC')
+    ax.set_ylim(0.4, 1.05); ax.legend(fontsize=7)
+
+    # MIA AUC — oracle
+    ax = fig.add_subplot(gs[2, 1])
+    ax.axhline(0.5, ls='--', color='gray', alpha=0.6)
+    for label in STRATEGIES:
+        vals = [ds_results[label]['mia_oracle'][t]['auc'] for t in task_names]
+        ax.plot(task_x, vals, color=MODEL_COLORS[label], marker='o', lw=2, label=label)
+    ax.set_title('MIA \u2014 AUC (oracle)'); ax.set_ylabel('AUC')
+    ax.set_ylim(0.4, 1.05); ax.legend(fontsize=7)
+
+    # MIA EER — no_seed
+    ax = fig.add_subplot(gs[2, 2])
+    for label in STRATEGIES:
+        vals = [ds_results[label]['mia_no_seed'][t]['eer'] for t in task_names]
+        ax.plot(task_x, vals, color=MODEL_COLORS[label], marker='s', lw=2, label=label)
+    ax.set_title('MIA \u2014 EER (no-seed)\n(higher = harder for attacker)'); ax.set_ylabel('EER')
+    ax.set_ylim(0, 0.6); ax.legend(fontsize=7)
+
+    # MIA EER — oracle
+    ax = fig.add_subplot(gs[2, 3])
+    for label in STRATEGIES:
+        vals = [ds_results[label]['mia_oracle'][t]['eer'] for t in task_names]
+        ax.plot(task_x, vals, color=MODEL_COLORS[label], marker='s', lw=2, label=label)
+    ax.set_title('MIA \u2014 EER (oracle)\n(higher = harder for attacker)'); ax.set_ylabel('EER')
+    ax.set_ylim(0, 0.6); ax.legend(fontsize=7)
 
     plt.tight_layout()
     plt.savefig(f'fig_{ds_name}_attacks.png', bbox_inches='tight')
