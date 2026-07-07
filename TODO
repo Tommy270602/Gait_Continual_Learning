@@ -1,12 +1,7 @@
-NOTEBOOK 3C ✅ 
--test 3b su cdml+lora 
--plot delle varie likelihood per task per seed.
+-provare phase3c notebook escludendo il task1, considerando solo gli altri task. Plot di matrici 3x3 con seed accuracy e likelihood 
 
-✅RUNNARE TUTTI I TEST CON MIA 
+⚠️Titolo: "Privacy Attacks and Countermeasures in Biometric Gait Identification"
 
-⚠️Domanda di laurea
-
-🔰 add conclusions
 
 
 BLUEPRINT CAPITOLI TESI
@@ -118,3 +113,7 @@ NOTEBOOK 21 ✅
 
 NOTEBOOK 3B ✅
 fare check inference supponendo che il classifier non sappia di preciso quale è il seed, ma abbia il pool di seed possibili. Li prova tutti e il seed giusto dovrebbe avere la likelihood maggiore.
+
+NOTEBOOK 3C ✅ 
+-test 3b su cdml+lora 
+-plot delle varie likelihood per task per seed.
