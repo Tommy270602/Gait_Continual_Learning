@@ -27,25 +27,6 @@ BLUEPRINT CAPITOLI TESI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ✅ DONE ✅
 -try for continual learning an approach similar to the congruent adversarial training, i.e. 
 develop a Loss function that doesnt only consider the current task but also the past samples. 
