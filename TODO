@@ -2,21 +2,31 @@ TODO
 -provare phase3c notebook escludendo il task1, considerando solo gli altri task. Plot di matrici 3x3 con seed accuracy e likelihood 
 
 
----------------------
-- vedevo dal codice che i dati che hai usato sono su 6 canali (immagino accelerometro e giroscopio), questo perché gli altri dataset non hanno tutti i 9 canali? Se questo è il motivo va benissimo, l'importante è scriverlo esplicitamente e ripetere i test solo su CDML per fare una fair comparison con il paper di Milani (ma mi sembra che questi risultati ci siano già).
-- nella tabella 2 condenserei tutti i risultati che abbiamo nell'accuracy, sia per gaitCNN che per FB-mamba. ✅
--  Oltre a questo, farei una figura simile a fig. 4 del paper di Milani dove fai vedere le average accuracy. 
-- ho ristrutturato la parte dei risultati (ma devo ancora revisionarla bene), terrei lo stesso ordine in cui hai presentato gli attacchi. ✅
--  Nella tabella di MIA aggiungerei anche EER (che mi sembra tu abbia già calcolato) oltre all'AUC. ✅
-- aggiungerei alla tabella di FSI anche i dati no seed, vediamo come mostrarli ⚠️ (quelli mostrati sono già dati no-seed)
-  
 
-- secondo me per mamba è meglio usare il nome ufficiale del paper (FB-Mamba), per creare meno confusione al lettore ✅
-- FSI è fatto sugli embedding prima o dopo CDML? ⚠️ (dopo CDML, altrimenti oracle e no-seed sarebbero la stessa cosa)
-- se la cosa è fattibile in tempi relativamente brevi mancano le performance per il replay di FB-Mamba ⚠️(sta runnando sul server)
-- potrebbe essere utile una tabella/paragrafo per confrontare la dimensione (in byte) dei dati da inviare per ciascuna task (seed CDML, vettori LoRA, altro?)
-- non so se per rendere un po' più forte il lavoro sia utile fare un po' di ablation sul LoRA (e.g. come cambiano le performance cambiando iperparametri tipo rank e alpha)
+
+
+
+
+Aggiornare la tesi con i nuovi notebook, in particolare i no-seed attack che è molto diverso. Aggiornare sia la parte dei risultati, che sono cambiati, sia la parte della spiegazione dell'attacco.
+
+---------------------
+-  Oltre a questo, farei una figura simile a fig. 4 del paper di Milani dove fai vedere le average accuracy. 
+
 ----------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
