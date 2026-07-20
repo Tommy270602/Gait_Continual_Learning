@@ -1,35 +1,3 @@
-TODO
--provare phase3c notebook escludendo il task1, considerando solo gli altri task. Plot di matrici 3x3 con seed accuracy e likelihood 
-
-
-
-
-
-
-
-Aggiornare la tesi con i nuovi notebook, in particolare i no-seed attack che è molto diverso. Aggiornare sia la parte dei risultati, che sono cambiati, sia la parte della spiegazione dell'attacco.
-
----------------------
--  Oltre a questo, farei una figura simile a fig. 4 del paper di Milani dove fai vedere le average accuracy. 
-
-----------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 📕Titolo: "Privacy Attacks and Countermeasures in Biometric Gait Identification"
 BLUEPRINT CAPITOLI TESI
 
@@ -44,6 +12,11 @@ BLUEPRINT CAPITOLI TESI
 -conclusions
 -references
 -add list of figures and list of acronyms at the beginning
+
+
+
+
+
 
 
 

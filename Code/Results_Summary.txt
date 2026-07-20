@@ -1,0 +1,1364 @@
+WHU GAIT - CNN
+
+[Std 0%] Step 1: Task 1
+  Epoch   1/50  val=0.948
+  Epoch  25/50  val=0.988
+  Epoch  50/50  val=0.988
+  → T1:89.7%
+[Std 0%] Step 2: Task 2
+  Epoch   1/50  val=0.934
+  Epoch  25/50  val=0.979
+  Epoch  50/50  val=0.982
+  → T1:0.3%  T2:93.6%
+[Std 0%] Step 3: Task 3
+  Epoch   1/50  val=0.936
+  Epoch  25/50  val=0.975
+  Epoch  50/50  val=0.975
+  → T1:0.0%  T2:0.0%  T3:92.8%
+[Std 0%] Step 4: Task 4
+  Epoch   1/50  val=0.961
+  Epoch  25/50  val=0.982
+  Epoch  50/50  val=0.980
+  → T1:0.0%  T2:0.0%  T3:0.0%  T4:98.0%
+
+[Std 15%] Step 1: Task 1
+  Epoch   1/50  val=0.948
+  Epoch  25/50  val=0.988
+  Epoch  50/50  val=0.988
+  → T1:89.7%
+[Std 15%] Step 2: Task 2
+  Epoch   1/50  val=0.919
+  Epoch  25/50  val=0.969
+  Epoch  50/50  val=0.980
+  → T1:86.1%  T2:93.8%
+[Std 15%] Step 3: Task 3
+  Epoch   1/50  val=0.950
+  Epoch  25/50  val=0.975
+  Epoch  50/50  val=0.977
+  → T1:85.2%  T2:86.4%  T3:90.7%
+[Std 15%] Step 4: Task 4
+  Epoch   1/50  val=0.962
+  Epoch  25/50  val=0.981
+  Epoch  50/50  val=0.983
+  → T1:85.9%  T2:82.3%  T3:85.3%  T4:97.3%
+
+[CDML] Step 1: Task 1  (seed=1000)
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+[CDML] Step 2: Task 2  (seed=1001)
+  Epoch   1/50  val=0.955
+  Epoch  25/50  val=0.987
+  Epoch  50/50  val=0.987
+  → T1:79.6%  T2:95.4%
+[CDML] Step 3: Task 3  (seed=1002)
+  Epoch   1/50  val=0.944
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.984
+  → T1:62.6%  T2:73.9%  T3:92.3%
+[CDML] Step 4: Task 4  (seed=1003)
+  Epoch   1/50  val=0.968
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.987
+  → T1:51.0%  T2:75.2%  T3:71.5%  T4:97.9%
+
+[CDML+KD] Step 1: Task 1
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+[CDML+KD] Step 2: Task 2
+  Epoch   1/50  val=0.825
+  Epoch  25/50  val=0.948
+  Epoch  50/50  val=0.955
+  → T1:89.7%  T2:87.4%
+[CDML+KD] Step 3: Task 3
+  Epoch   1/50  val=0.913
+  Epoch  25/50  val=0.952
+  Epoch  50/50  val=0.947
+  → T1:85.4%  T2:64.8%  T3:84.5%
+[CDML+KD] Step 4: Task 4
+  Epoch   1/50  val=0.928
+  Epoch  25/50  val=0.951
+  Epoch  50/50  val=0.944
+  → T1:52.3%  T2:41.3%  T3:40.4%  T4:94.5%
+
+[WGR-CDML] Step 1: Task 1
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+  WGR buffer: stored statistics for Task 1 (30 classes)
+[WGR-CDML] Step 2: Task 2
+  + 900 synthetic replay samples
+  Epoch   1/50  val=0.943
+  Epoch  25/50  val=0.987
+  Epoch  50/50  val=0.987
+  → T1:86.1%  T2:93.1%
+  WGR buffer: stored statistics for Task 2 (30 classes)
+[WGR-CDML] Step 3: Task 3
+  + 1800 synthetic replay samples
+  Epoch   1/50  val=0.949
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.985
+  → T1:86.9%  T2:81.7%  T3:92.2%
+  WGR buffer: stored statistics for Task 3 (30 classes)
+[WGR-CDML] Step 4: Task 4
+  + 2700 synthetic replay samples
+  Epoch   1/50  val=0.964
+  Epoch  25/50  val=0.982
+  Epoch  50/50  val=0.984
+  → T1:52.0%  T2:65.9%  T3:83.2%  T4:98.4%
+  WGR buffer: stored statistics for Task 4 (28 classes)
+
+[LiDER] Step 1: Task 1
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+[LiDER] Step 2: Task 2
+  Epoch   1/50  val=0.940
+  Epoch  25/50  val=0.980
+  Epoch  50/50  val=0.986
+  → T1:88.9%  T2:94.4%
+[LiDER] Step 3: Task 3
+  Epoch   1/50  val=0.959
+  Epoch  25/50  val=0.981
+  Epoch  50/50  val=0.982
+  → T1:80.8%  T2:78.3%  T3:92.8%
+[LiDER] Step 4: Task 4
+  Epoch   1/50  val=0.953
+  Epoch  25/50  val=0.983
+  Epoch  50/50  val=0.989
+  → T1:56.5%  T2:70.6%  T3:86.1%  T4:98.3%
+
+── Final accuracy (after Task 4) ──
+  Model         T1      T2      T3      T4      Avg
+  ───────────────────────────────────────────────────────
+  Std 0%          0.0%    0.0%    0.0%   98.0%   24.5%
+  Std 15%        85.9%   82.3%   85.3%   97.3%   87.7%
+  CDML           51.0%   75.2%   71.5%   97.9%   73.9%
+  CDML+KD        52.3%   41.3%   40.4%   94.5%   57.1%
+  WGR-CDML       52.0%   65.9%   83.2%   98.4%   74.9%
+  LiDER          56.5%   70.6%   86.1%   98.3%   77.9%
+
+  UCIHAR - CNN
+
+  [Std 0%] Step 1: Task 1
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+[Std 0%] Step 2: Task 2
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:0.0%  T2:98.4%
+[Std 0%] Step 3: Task 3
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.957
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:0.0%  T2:0.0%  T3:100.0%
+[Std 0%] Step 4: Task 4
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:0.0%  T2:0.0%  T3:0.0%  T4:100.0%
+
+[Std 15%] Step 1: Task 1
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+[Std 15%] Step 2: Task 2
+  Epoch   1/100  val=0.143
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:47.3%  T2:100.0%
+[Std 15%] Step 3: Task 3
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:74.2%  T2:67.7%  T3:100.0%
+[Std 15%] Step 4: Task 4
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:63.4%  T2:61.3%  T3:79.3%  T4:100.0%
+
+[CDML] Step 1: Task 1  (seed=1000)
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=0.987
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+[CDML] Step 2: Task 2  (seed=1001)
+  Epoch   1/100  val=0.449
+  Epoch  25/100  val=0.980
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:16.1%  T2:98.4%
+[CDML] Step 3: Task 3  (seed=1002)
+  Epoch   1/100  val=0.277
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:15.1%  T2:50.0%  T3:100.0%
+[CDML] Step 4: Task 4  (seed=1003)
+  Epoch   1/100  val=0.333
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=0.978
+  Epoch 100/100  val=0.978
+  → T1:39.8%  T2:30.6%  T3:41.4%  T4:100.0%
+
+[CDML+KD] Step 1: Task 1
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=0.987
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+[CDML+KD] Step 2: Task 2
+  Epoch   1/100  val=0.265
+  Epoch  25/100  val=0.878
+  Epoch  50/100  val=0.816
+  Epoch  75/100  val=0.837
+  Epoch 100/100  val=0.837
+  → T1:29.0%  T2:88.7%
+[CDML+KD] Step 3: Task 3
+  Epoch   1/100  val=0.298
+  Epoch  25/100  val=0.894
+  Epoch  50/100  val=0.957
+  Epoch  75/100  val=0.894
+  Epoch 100/100  val=0.894
+  → T1:29.0%  T2:35.5%  T3:91.4%
+[CDML+KD] Step 4: Task 4
+  Epoch   1/100  val=0.444
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=0.978
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:37.6%  T2:35.5%  T3:63.8%  T4:98.2%
+
+[WGR-CDML] Step 1: Task 1
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=0.987
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+  WGR buffer: stored statistics for Task 1 (10 classes)
+[WGR-CDML] Step 2: Task 2
+  + 300 synthetic replay samples
+  Epoch   1/100  val=0.469
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:47.3%  T2:98.4%
+  WGR buffer: stored statistics for Task 2 (7 classes)
+[WGR-CDML] Step 3: Task 3
+  + 510 synthetic replay samples
+  Epoch   1/100  val=0.277
+  Epoch  25/100  val=0.957
+  Epoch  50/100  val=0.957
+  Epoch  75/100  val=0.957
+  Epoch 100/100  val=0.957
+  → T1:49.5%  T2:61.3%  T3:98.3%
+  WGR buffer: stored statistics for Task 3 (7 classes)
+[WGR-CDML] Step 4: Task 4
+  + 720 synthetic replay samples
+  Epoch   1/100  val=0.244
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:43.0%  T2:48.4%  T3:72.4%  T4:100.0%
+  WGR buffer: stored statistics for Task 4 (6 classes)
+
+[LiDER] Step 1: Task 1
+  Epoch   1/100  val=0.160
+  Epoch  25/100  val=0.987
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:98.9%
+[LiDER] Step 2: Task 2
+  Epoch   1/100  val=0.367
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=0.980
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:23.7%  T2:98.4%
+[LiDER] Step 3: Task 3
+  Epoch   1/100  val=0.532
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:35.5%  T2:45.2%  T3:100.0%
+[LiDER] Step 4: Task 4
+  Epoch   1/100  val=0.311
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:37.6%  T2:16.1%  T3:31.0%  T4:100.0%
+
+── Final accuracy (after Task 4) ──
+  Model         T1      T2      T3      T4      Avg
+  ───────────────────────────────────────────────────────
+  Std 0%          0.0%    0.0%    0.0%  100.0%   25.0%
+  Std 15%        63.4%   61.3%   79.3%  100.0%   76.0%
+  CDML           39.8%   30.6%   41.4%  100.0%   53.0%
+  CDML+KD        37.6%   35.5%   63.8%   98.2%   58.8%
+  WGR-CDML       43.0%   48.4%   72.4%  100.0%   66.0%
+  LiDER          37.6%   16.1%   31.0%  100.0%   46.2%
+
+  WISDM - CNN
+
+  [Std 0%] Step 1: Task 1
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.966
+  → T1:100.0%
+[Std 0%] Step 2: Task 2
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.767
+  → T1:0.0%  T2:86.4%
+[Std 0%] Step 3: Task 3
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.793
+  → T1:0.0%  T2:0.0%  T3:83.3%
+[Std 0%] Step 4: Task 4
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.839
+  → T1:0.0%  T2:0.0%  T3:0.0%  T4:89.1%
+
+[Std 15%] Step 1: Task 1
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.966
+  → T1:100.0%
+[Std 15%] Step 2: Task 2
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.867
+  → T1:20.9%  T2:84.1%
+[Std 15%] Step 3: Task 3
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=1.000
+  → T1:53.5%  T2:52.3%  T3:97.6%
+[Std 15%] Step 4: Task 4
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.968
+  → T1:67.4%  T2:59.1%  T3:64.3%  T4:95.7%
+
+[CDML] Step 1: Task 1  (seed=1000)
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.931
+  → T1:100.0%
+[CDML] Step 2: Task 2  (seed=1001)
+  Epoch   1/30  val=0.333
+  Epoch  25/30  val=0.933
+  → T1:27.9%  T2:97.7%
+[CDML] Step 3: Task 3  (seed=1002)
+  Epoch   1/30  val=0.172
+  Epoch  25/30  val=1.000
+  → T1:32.6%  T2:11.4%  T3:100.0%
+[CDML] Step 4: Task 4  (seed=1003)
+  Epoch   1/30  val=0.161
+  Epoch  25/30  val=0.935
+  → T1:7.0%  T2:15.9%  T3:59.5%  T4:93.5%
+
+[CDML+KD] Step 1: Task 1
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.931
+  → T1:100.0%
+[CDML+KD] Step 2: Task 2
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.767
+  → T1:32.6%  T2:84.1%
+[CDML+KD] Step 3: Task 3
+  Epoch   1/30  val=0.103
+  Epoch  25/30  val=0.966
+  → T1:14.0%  T2:15.9%  T3:95.2%
+[CDML+KD] Step 4: Task 4
+  Epoch   1/30  val=0.290
+  Epoch  25/30  val=0.935
+  → T1:11.6%  T2:9.1%  T3:47.6%  T4:95.7%
+
+[WGR-CDML] Step 1: Task 1
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.931
+  → T1:100.0%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[WGR-CDML] Step 2: Task 2
+  + 390 synthetic replay samples
+  Epoch   1/30  val=0.000
+  Epoch  25/30  val=0.700
+  → T1:37.2%  T2:90.9%
+  WGR buffer: stored statistics for Task 2 (13 classes)
+[WGR-CDML] Step 3: Task 3
+  + 780 synthetic replay samples
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.966
+  → T1:62.8%  T2:61.4%  T3:95.2%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[WGR-CDML] Step 4: Task 4
+  + 1170 synthetic replay samples
+  Epoch   1/30  val=0.097
+  Epoch  25/30  val=0.968
+  → T1:55.8%  T2:38.6%  T3:64.3%  T4:80.4%
+  WGR buffer: stored statistics for Task 4 (12 classes)
+
+[LiDER] Step 1: Task 1
+  Epoch   1/30  val=0.034
+  Epoch  25/30  val=0.931
+  → T1:100.0%
+[LiDER] Step 2: Task 2
+  Epoch   1/30  val=0.100
+  Epoch  25/30  val=0.967
+  → T1:20.9%  T2:97.7%
+[LiDER] Step 3: Task 3
+  Epoch   1/30  val=0.207
+  Epoch  25/30  val=1.000
+  → T1:30.2%  T2:38.6%  T3:92.9%
+[LiDER] Step 4: Task 4
+  Epoch   1/30  val=0.387
+  Epoch  25/30  val=0.968
+  → T1:25.6%  T2:22.7%  T3:81.0%  T4:95.7%
+
+── Final accuracy (after Task 4) ──
+  Model         T1      T2      T3      T4      Avg
+  ───────────────────────────────────────────────────────
+  Std 0%          0.0%    0.0%    0.0%   89.1%   22.3%
+  Std 15%        67.4%   59.1%   64.3%   95.7%   71.6%
+  CDML            7.0%   15.9%   59.5%   93.5%   44.0%
+  CDML+KD        11.6%    9.1%   47.6%   95.7%   41.0%
+  WGR-CDML       55.8%   38.6%   64.3%   80.4%   59.8%
+  LiDER          25.6%   22.7%   81.0%   95.7%   56.2%
+
+  WHU GAIT - FBMAMBA
+
+    --- Mamba-CDML ---
+[Mamba-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.561
+  Epoch  25/50  val=0.998
+  Epoch  50/50  val=0.998
+  -> T1:89.1%
+[Mamba-CDML] Step 2/4: Task 2
+  Epoch   1/50  val=0.926
+  Epoch  25/50  val=0.991
+  Epoch  50/50  val=0.994
+  -> T1:37.8%  T2:92.3%
+[Mamba-CDML] Step 3/4: Task 3
+  Epoch   1/50  val=0.892
+  Epoch  25/50  val=0.990
+  Epoch  50/50  val=0.988
+  -> T1:17.9%  T2:43.5%  T3:92.1%
+[Mamba-CDML] Step 4/4: Task 4
+  Epoch   1/50  val=0.938
+  Epoch  25/50  val=0.993
+  Epoch  50/50  val=0.994
+  -> T1:17.4%  T2:29.8%  T3:45.7%  T4:99.1%
+
+  --- Mamba-CDML+LoRA ---
+[Mamba-CDML+LoRA] Step 1/4: Task 1
+  Full model: 38,166 params
+  Epoch   1/50  val=0.643
+  Epoch  25/50  val=0.994
+  Epoch  50/50  val=0.996
+  -> T1:90.3%
+[Mamba-CDML+LoRA] Step 2/4: Task 2
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.442
+  Epoch  25/50  val=0.854
+  Epoch  50/50  val=0.866
+  -> T1:90.3%  T2:75.1%
+[Mamba-CDML+LoRA] Step 3/4: Task 3
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.356
+  Epoch  25/50  val=0.843
+  Epoch  50/50  val=0.872
+  -> T1:90.3%  T2:75.1%  T3:81.1%
+[Mamba-CDML+LoRA] Step 4/4: Task 4
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.595
+  Epoch  25/50  val=0.903
+  Epoch  50/50  val=0.920
+  -> T1:90.3%  T2:75.1%  T3:81.1%  T4:86.4%
+
+  --- Mamba-WGR-CDML ---
+[Mamba-WGR-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.701
+  Epoch  25/50  val=0.996
+  Epoch  50/50  val=0.996
+  -> T1:89.8%
+  WGR buffer: stored statistics for Task 1 (30 classes)
+[Mamba-WGR-CDML] Step 2/4: Task 2
+  + 900 synthetic replay samples
+  Epoch   1/50  val=0.919
+  Epoch  25/50  val=0.987
+  Epoch  50/50  val=0.989
+  -> T1:49.9%  T2:92.7%
+  WGR buffer: stored statistics for Task 2 (30 classes)
+[Mamba-WGR-CDML] Step 3/4: Task 3
+  + 1800 synthetic replay samples
+  Epoch   1/50  val=0.926
+  Epoch  25/50  val=0.986
+  Epoch  50/50  val=0.988
+  -> T1:18.5%  T2:26.9%  T3:91.6%
+  WGR buffer: stored statistics for Task 3 (30 classes)
+[Mamba-WGR-CDML] Step 4/4: Task 4
+  + 2700 synthetic replay samples
+  Epoch   1/50  val=0.936
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.989
+  -> T1:9.7%  T2:15.9%  T3:26.9%  T4:98.0%
+  WGR buffer: stored statistics for Task 4 (28 classes)
+
+  --- Mamba-WGR-CDML+LoRA ---
+[Mamba-WGR-CDML+LoRA] Step 1/4: Task 1
+  Full model: 38,166 params
+  Epoch   1/50  val=0.643
+  Epoch  25/50  val=0.994
+  Epoch  50/50  val=0.996
+  -> T1:90.3%
+  WGR buffer: stored statistics for Task 1 (30 classes)
+[Mamba-WGR-CDML+LoRA] Step 2/4: Task 2
+  + 900 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.508
+  Epoch  25/50  val=0.852
+  Epoch  50/50  val=0.862
+  -> T1:90.3%  T2:72.5%
+  WGR buffer: stored statistics for Task 2 (30 classes)
+[Mamba-WGR-CDML+LoRA] Step 3/4: Task 3
+  + 1800 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.545
+  Epoch  25/50  val=0.828
+  Epoch  50/50  val=0.863
+  -> T1:90.3%  T2:72.5%  T3:78.3%
+  WGR buffer: stored statistics for Task 3 (30 classes)
+[Mamba-WGR-CDML+LoRA] Step 4/4: Task 4
+  + 2700 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 3,120
+  Epoch   1/50  val=0.673
+  Epoch  25/50  val=0.871
+  Epoch  50/50  val=0.886
+  -> T1:90.3%  T2:72.5%  T3:78.3%  T4:84.3%
+  WGR buffer: stored statistics for Task 4 (28 classes)
+
+[4/6] Running Attack A (IIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.367
+  Mamba-CDML [oracle]  avg AUC=0.906
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.349
+  Mamba-CDML+LoRA [oracle]  avg AUC=0.993
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.470
+  Mamba-WGR-CDML [oracle]  avg AUC=0.841
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.349
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.812
+
+[4b/6] Running Attack A₂ (MIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.481
+  Mamba-CDML [oracle]  avg AUC=0.499
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.493
+  Mamba-CDML+LoRA [oracle]  avg AUC=0.524
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.501
+  Mamba-WGR-CDML [oracle]  avg AUC=0.483
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.493
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.533
+
+[5/6] Running Attack B (FSI)...
+  Mamba-CDML [no_seed]  avg k-NN acc=0.034
+  Mamba-CDML [oracle]  avg k-NN acc=0.892
+  Mamba-CDML+LoRA [no_seed]  avg k-NN acc=0.034
+  Mamba-CDML+LoRA [oracle]  avg k-NN acc=0.866
+  Mamba-WGR-CDML [no_seed]  avg k-NN acc=0.034
+  Mamba-WGR-CDML [oracle]  avg k-NN acc=0.923
+  Mamba-WGR-CDML+LoRA [no_seed]  avg k-NN acc=0.034
+  Mamba-WGR-CDML+LoRA [oracle]  avg k-NN acc=0.860
+
+[6/6] Running Attack C (Backdoor)...
+  [Mamba-CDML] Backdoor: clean_acc=0.977  ASR=0.900
+  [Mamba-CDML+LoRA] Backdoor: clean_acc=0.968  ASR=0.920
+  [Mamba-WGR-CDML] Backdoor: clean_acc=0.971  ASR=0.908
+  [Mamba-WGR-CDML+LoRA] Backdoor: clean_acc=0.969  ASR=0.873
+
+───────────────────────────────────────────────────────
+  Summary — Gait ID — Dataset 1
+  Strategy                     Avg Acc      BWT
+  ─────────────────────────────────────────────
+  Mamba-CDML                    48.03%  -60.18%
+  Mamba-CDML+LoRA               83.18%    0.00%
+  Mamba-WGR-CDML                37.62%  -73.89%
+  Mamba-WGR-CDML+LoRA           81.34%    0.00%
+
+  UCIHAR - FMAMBA 
+
+   --- Mamba-CDML ---
+[Mamba-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.185
+  Epoch  25/50  val=0.980
+  Epoch  50/50  val=0.993
+  -> T1:100.0%
+[Mamba-CDML] Step 2/4: Task 2
+  Epoch   1/50  val=0.284
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:21.8%  T2:99.3%
+[Mamba-CDML] Step 3/4: Task 3
+  Epoch   1/50  val=0.357
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:29.0%  T2:29.3%  T3:100.0%
+[Mamba-CDML] Step 4/4: Task 4
+  Epoch   1/50  val=0.308
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:13.1%  T2:28.9%  T3:41.9%  T4:99.0%
+
+  --- Mamba-CDML+LoRA ---
+[Mamba-CDML+LoRA] Step 1/4: Task 1
+  Full model: 26,110 params
+  Epoch   1/50  val=0.318
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:100.0%
+[Mamba-CDML+LoRA] Step 2/4: Task 2
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.006
+  Epoch  25/50  val=0.543
+  Epoch  50/50  val=0.580
+  -> T1:100.0%  T2:61.9%
+[Mamba-CDML+LoRA] Step 3/4: Task 3
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.000
+  Epoch  25/50  val=0.698
+  Epoch  50/50  val=0.825
+  -> T1:100.0%  T2:61.9%  T3:80.0%
+[Mamba-CDML+LoRA] Step 4/4: Task 4
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.000
+  Epoch  25/50  val=0.750
+  Epoch  50/50  val=0.800
+  -> T1:100.0%  T2:61.9%  T3:80.0%  T4:72.0%
+
+  --- Mamba-WGR-CDML ---
+[Mamba-WGR-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.318
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:100.0%
+  WGR buffer: stored statistics for Task 1 (8 classes)
+[Mamba-WGR-CDML] Step 2/4: Task 2
+  + 240 synthetic replay samples
+  Epoch   1/50  val=0.481
+  Epoch  25/50  val=0.963
+  Epoch  50/50  val=0.981
+  -> T1:68.7%  T2:99.3%
+  WGR buffer: stored statistics for Task 2 (9 classes)
+[Mamba-WGR-CDML] Step 3/4: Task 3
+  + 510 synthetic replay samples
+  Epoch   1/50  val=0.421
+  Epoch  25/50  val=0.976
+  Epoch  50/50  val=0.992
+  -> T1:61.1%  T2:42.5%  T3:99.5%
+  WGR buffer: stored statistics for Task 3 (7 classes)
+[Mamba-WGR-CDML] Step 4/4: Task 4
+  + 720 synthetic replay samples
+  Epoch   1/50  val=0.725
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=0.983
+  -> T1:33.3%  T2:32.6%  T3:45.7%  T4:99.5%
+  WGR buffer: stored statistics for Task 4 (6 classes)
+
+  --- Mamba-WGR-CDML+LoRA ---
+[Mamba-WGR-CDML+LoRA] Step 1/4: Task 1
+  Full model: 26,110 params
+  Epoch   1/50  val=0.318
+  Epoch  25/50  val=1.000
+  Epoch  50/50  val=1.000
+  -> T1:100.0%
+  WGR buffer: stored statistics for Task 1 (8 classes)
+[Mamba-WGR-CDML+LoRA] Step 2/4: Task 2
+  + 240 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.037
+  Epoch  25/50  val=0.537
+  Epoch  50/50  val=0.586
+  -> T1:100.0%  T2:59.0%
+  WGR buffer: stored statistics for Task 2 (9 classes)
+[Mamba-WGR-CDML+LoRA] Step 3/4: Task 3
+  + 510 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.000
+  Epoch  25/50  val=0.762
+  Epoch  50/50  val=0.770
+  -> T1:100.0%  T2:59.0%  T3:73.8%
+  WGR buffer: stored statistics for Task 3 (7 classes)
+[Mamba-WGR-CDML+LoRA] Step 4/4: Task 4
+  + 720 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,416
+  Epoch   1/50  val=0.042
+  Epoch  25/50  val=0.658
+  Epoch  50/50  val=0.700
+  -> T1:100.0%  T2:59.0%  T3:73.8%  T4:62.0%
+  WGR buffer: stored statistics for Task 4 (6 classes)
+
+[4/6] Running Attack A (IIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.516
+  Mamba-CDML [oracle]  avg AUC=0.861
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.400
+  Mamba-CDML+LoRA [oracle]  avg AUC=1.000
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.407
+  Mamba-WGR-CDML [oracle]  avg AUC=0.949
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.400
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.650
+
+[4b/6] Running Attack A₂ (MIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.497
+  Mamba-CDML [oracle]  avg AUC=0.491
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.511
+  Mamba-CDML+LoRA [oracle]  avg AUC=0.512
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.487
+  Mamba-WGR-CDML [oracle]  avg AUC=0.506
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.511
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.505
+
+[5/6] Running Attack B (FSI)...
+  Mamba-CDML [no_seed]  avg k-NN acc=0.135
+  Mamba-CDML [oracle]  avg k-NN acc=0.895
+  Mamba-CDML+LoRA [no_seed]  avg k-NN acc=0.135
+  Mamba-CDML+LoRA [oracle]  avg k-NN acc=0.933
+  Mamba-WGR-CDML [no_seed]  avg k-NN acc=0.135
+  Mamba-WGR-CDML [oracle]  avg k-NN acc=0.959
+  Mamba-WGR-CDML+LoRA [no_seed]  avg k-NN acc=0.135
+  Mamba-WGR-CDML+LoRA [oracle]  avg k-NN acc=0.933
+
+[6/6] Running Attack C (Backdoor)...
+  [Mamba-CDML] Backdoor: clean_acc=0.980  ASR=0.310
+  [Mamba-CDML+LoRA] Backdoor: clean_acc=0.940  ASR=0.380
+  [Mamba-WGR-CDML] Backdoor: clean_acc=0.945  ASR=0.400
+  [Mamba-WGR-CDML+LoRA] Backdoor: clean_acc=0.975  ASR=0.345
+
+───────────────────────────────────────────────────────
+  Summary — UCI-HAR (Subject ID)
+  Strategy                     Avg Acc      BWT
+  ─────────────────────────────────────────────
+  Mamba-CDML                    45.73%  -71.78%
+  Mamba-CDML+LoRA               78.48%    0.00%
+  Mamba-WGR-CDML                52.79%  -62.38%
+  Mamba-WGR-CDML+LoRA           73.70%    0.00%
+  
+
+  WISDM - FBMAMBA
+
+   --- Mamba-CDML ---
+[Mamba-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.422
+  Epoch  25/50  val=0.950
+  Epoch  50/50  val=0.971
+  -> T1:96.1%
+[Mamba-CDML] Step 2/4: Task 2
+  Epoch   1/50  val=0.595
+  Epoch  25/50  val=0.954
+  Epoch  50/50  val=0.974
+  -> T1:14.2%  T2:97.4%
+[Mamba-CDML] Step 3/4: Task 3
+  Epoch   1/50  val=0.582
+  Epoch  25/50  val=0.944
+  Epoch  50/50  val=0.961
+  -> T1:11.1%  T2:21.9%  T3:96.8%
+[Mamba-CDML] Step 4/4: Task 4
+  Epoch   1/50  val=0.727
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.990
+  -> T1:17.9%  T2:19.5%  T3:24.7%  T4:98.2%
+
+  --- Mamba-CDML+LoRA ---
+[Mamba-CDML+LoRA] Step 1/4: Task 1
+  Full model: 28,987 params
+  Epoch   1/50  val=0.422
+  Epoch  25/50  val=0.914
+  Epoch  50/50  val=0.951
+  -> T1:95.3%
+[Mamba-CDML+LoRA] Step 2/4: Task 2
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.232
+  Epoch  25/50  val=0.481
+  Epoch  50/50  val=0.499
+  -> T1:95.3%  T2:49.7%
+[Mamba-CDML+LoRA] Step 3/4: Task 3
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.200
+  Epoch  25/50  val=0.464
+  Epoch  50/50  val=0.493
+  -> T1:95.3%  T2:49.7%  T3:50.5%
+[Mamba-CDML+LoRA] Step 4/4: Task 4
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.328
+  Epoch  25/50  val=0.647
+  Epoch  50/50  val=0.670
+  -> T1:95.3%  T2:49.7%  T3:50.5%  T4:66.4%
+
+  --- Mamba-WGR-CDML ---
+[Mamba-WGR-CDML] Step 1/4: Task 1
+  Epoch   1/50  val=0.412
+  Epoch  25/50  val=0.911
+  Epoch  50/50  val=0.962
+  -> T1:95.5%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[Mamba-WGR-CDML] Step 2/4: Task 2
+  + 390 synthetic replay samples
+  Epoch   1/50  val=0.599
+  Epoch  25/50  val=0.964
+  Epoch  50/50  val=0.975
+  -> T1:16.6%  T2:98.0%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[Mamba-WGR-CDML] Step 3/4: Task 3
+  + 750 synthetic replay samples
+  Epoch   1/50  val=0.594
+  Epoch  25/50  val=0.953
+  Epoch  50/50  val=0.965
+  -> T1:21.2%  T2:16.2%  T3:97.5%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[Mamba-WGR-CDML] Step 4/4: Task 4
+  + 1140 synthetic replay samples
+  Epoch   1/50  val=0.699
+  Epoch  25/50  val=0.973
+  Epoch  50/50  val=0.949
+  -> T1:13.5%  T2:11.3%  T3:24.7%  T4:96.1%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+  --- Mamba-WGR-CDML+LoRA ---
+[Mamba-WGR-CDML+LoRA] Step 1/4: Task 1
+  Full model: 28,987 params
+  Epoch   1/50  val=0.422
+  Epoch  25/50  val=0.914
+  Epoch  50/50  val=0.951
+  -> T1:95.3%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[Mamba-WGR-CDML+LoRA] Step 2/4: Task 2
+  + 390 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.254
+  Epoch  25/50  val=0.475
+  Epoch  50/50  val=0.501
+  -> T1:95.3%  T2:50.7%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[Mamba-WGR-CDML+LoRA] Step 3/4: Task 3
+  + 750 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.210
+  Epoch  25/50  val=0.480
+  Epoch  50/50  val=0.493
+  -> T1:95.3%  T2:50.7%  T3:50.4%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[Mamba-WGR-CDML+LoRA] Step 4/4: Task 4
+  + 1140 synthetic replay samples
+  Backbone frozen. LoRA adapter params per task: 2,584
+  Epoch   1/50  val=0.373
+  Epoch  25/50  val=0.669
+  Epoch  50/50  val=0.665
+  -> T1:95.3%  T2:50.7%  T3:50.4%  T4:66.7%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+[4/6] Running Attack A (IIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.330
+  Mamba-CDML [oracle]  avg AUC=0.888
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.324
+  Mamba-CDML+LoRA [oracle]  avg AUC=1.000
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.413
+  Mamba-WGR-CDML [oracle]  avg AUC=0.770
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.324
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.978
+
+[4b/6] Running Attack A₂ (MIA)...
+  Mamba-CDML [no_seed]  avg AUC=0.527
+  Mamba-CDML [oracle]  avg AUC=0.495
+  Mamba-CDML+LoRA [no_seed]  avg AUC=0.493
+  Mamba-CDML+LoRA [oracle]  avg AUC=0.518
+  Mamba-WGR-CDML [no_seed]  avg AUC=0.511
+  Mamba-WGR-CDML [oracle]  avg AUC=0.497
+  Mamba-WGR-CDML+LoRA [no_seed]  avg AUC=0.493
+  Mamba-WGR-CDML+LoRA [oracle]  avg AUC=0.515
+
+[5/6] Running Attack B (FSI)...
+  Mamba-CDML [no_seed]  avg k-NN acc=0.085
+  Mamba-CDML [oracle]  avg k-NN acc=0.918
+  Mamba-CDML+LoRA [no_seed]  avg k-NN acc=0.085
+  Mamba-CDML+LoRA [oracle]  avg k-NN acc=0.949
+  Mamba-WGR-CDML [no_seed]  avg k-NN acc=0.085
+  Mamba-WGR-CDML [oracle]  avg k-NN acc=0.954
+  Mamba-WGR-CDML+LoRA [no_seed]  avg k-NN acc=0.085
+  Mamba-WGR-CDML+LoRA [oracle]  avg k-NN acc=0.949
+
+[6/6] Running Attack C (Backdoor)...
+  [Mamba-CDML] Backdoor: clean_acc=0.947  ASR=0.784
+  [Mamba-CDML+LoRA] Backdoor: clean_acc=0.964  ASR=0.840
+  [Mamba-WGR-CDML] Backdoor: clean_acc=0.958  ASR=0.804
+  [Mamba-WGR-CDML+LoRA] Backdoor: clean_acc=0.966  ASR=0.790
+
+───────────────────────────────────────────────────────
+  Summary — WISDM (Subject ID)
+  Strategy                     Avg Acc      BWT
+  ─────────────────────────────────────────────
+  Mamba-CDML                    40.06%  -76.10%
+  Mamba-CDML+LoRA               65.48%    0.00%
+  Mamba-WGR-CDML                36.41%  -80.48%
+  Mamba-WGR-CDML+LoRA           65.77%    0.00%
+
+  WHUGAIT - LoRA
+
+  [CDML] Step 1: Task 1  seed=1000
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+[CDML] Step 2: Task 2  seed=1001
+  Epoch   1/50  val=0.955
+  Epoch  25/50  val=0.987
+  Epoch  50/50  val=0.987
+  → T1:79.6%  T2:95.4%
+[CDML] Step 3: Task 3  seed=1002
+  Epoch   1/50  val=0.944
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.984
+  → T1:62.6%  T2:73.9%  T3:92.3%
+[CDML] Step 4: Task 4  seed=1003
+  Epoch   1/50  val=0.968
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.987
+  → T1:51.0%  T2:75.2%  T3:71.5%  T4:97.9%
+
+[CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (238,406 params)
+  Epoch   1/50  val=0.944
+  Epoch  25/50  val=0.992
+  Epoch  50/50  val=0.991
+  → T1:90.3%
+[CDML+LoRA] Step 2: Task 2  seed=1001
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.608
+  Epoch  25/50  val=0.958
+  Epoch  50/50  val=0.971
+  → T1:90.3%  T2:91.3%
+[CDML+LoRA] Step 3: Task 3  seed=1002
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.425
+  Epoch  25/50  val=0.956
+  Epoch  50/50  val=0.964
+  → T1:90.3%  T2:91.3%  T3:88.9%
+[CDML+LoRA] Step 4: Task 4  seed=1003
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.665
+  Epoch  25/50  val=0.972
+  Epoch  50/50  val=0.978
+  → T1:90.3%  T2:91.3%  T3:88.9%  T4:95.7%
+
+[WGR-CDML] Step 1: Task 1  seed=1000
+  Epoch   1/50  val=0.941
+  Epoch  25/50  val=0.989
+  Epoch  50/50  val=0.991
+  → T1:89.7%
+  WGR buffer: stored statistics for Task 1 (30 classes)
+[WGR-CDML] Step 2: Task 2  seed=1001
+  + 900 synthetic replay samples
+  Epoch   1/50  val=0.943
+  Epoch  25/50  val=0.987
+  Epoch  50/50  val=0.987
+  → T1:86.1%  T2:93.1%
+  WGR buffer: stored statistics for Task 2 (30 classes)
+[WGR-CDML] Step 3: Task 3  seed=1002
+  + 1800 synthetic replay samples
+  Epoch   1/50  val=0.949
+  Epoch  25/50  val=0.984
+  Epoch  50/50  val=0.985
+  → T1:86.9%  T2:81.7%  T3:92.2%
+  WGR buffer: stored statistics for Task 3 (30 classes)
+[WGR-CDML] Step 4: Task 4  seed=1003
+  + 2700 synthetic replay samples
+  Epoch   1/50  val=0.964
+  Epoch  25/50  val=0.982
+  Epoch  50/50  val=0.984
+  → T1:52.0%  T2:65.9%  T3:83.2%  T4:98.4%
+  WGR buffer: stored statistics for Task 4 (28 classes)
+
+[WGR-CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (238,406 params)
+  Epoch   1/50  val=0.944
+  Epoch  25/50  val=0.992
+  Epoch  50/50  val=0.991
+  → T1:90.3%
+  WGR buffer: stored statistics for Task 1 (30 classes)
+[WGR-CDML+LoRA] Step 2: Task 2  seed=1001
+  + 900 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.617
+  Epoch  25/50  val=0.954
+  Epoch  50/50  val=0.957
+  → T1:90.3%  T2:90.7%
+  WGR buffer: stored statistics for Task 2 (30 classes)
+[WGR-CDML+LoRA] Step 3: Task 3  seed=1002
+  + 1800 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.467
+  Epoch  25/50  val=0.950
+  Epoch  50/50  val=0.960
+  → T1:90.3%  T2:90.7%  T3:88.1%
+  WGR buffer: stored statistics for Task 3 (30 classes)
+[WGR-CDML+LoRA] Step 4: Task 4  seed=1003
+  + 2700 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (11,184 params)
+  Epoch   1/50  val=0.741
+  Epoch  25/50  val=0.953
+  Epoch  50/50  val=0.952
+  → T1:90.3%  T2:90.7%  T3:88.1%  T4:92.8%
+  WGR buffer: stored statistics for Task 4 (28 classes)
+
+── Final accuracy summary (after Task 4) ──
+  Model               T1      T2      T3      T4      Avg     T1-drop
+  ─────────────────────────────────────────────────────────────────
+  CDML                 51.0%   75.2%   71.5%   97.9%   73.9%  +38.8pp
+  CDML+LoRA            90.3%   91.3%   88.9%   95.7%   91.5%   +0.0pp
+  WGR-CDML             52.0%   65.9%   83.2%   98.4%   74.9%  +37.7pp
+  WGR-CDML+LoRA        90.3%   90.7%   88.1%   92.8%   90.5%   +0.0pp
+
+
+  UCIHAR - LoRA
+
+  [CDML] Step 1: Task 1  seed=1000
+  Epoch   1/100  val=0.197
+  Epoch  25/100  val=0.984
+  Epoch  50/100  val=0.984
+  Epoch  75/100  val=0.984
+  Epoch 100/100  val=0.984
+  → T1:100.0%
+[CDML] Step 2: Task 2  seed=1001
+  Epoch   1/100  val=0.435
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:54.5%  T2:98.7%
+[CDML] Step 3: Task 3  seed=1002
+  Epoch   1/100  val=0.383
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:51.9%  T2:26.9%  T3:100.0%
+[CDML] Step 4: Task 4  seed=1003
+  Epoch   1/100  val=0.333
+  Epoch  25/100  val=0.978
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:42.9%  T2:32.1%  T3:44.8%  T4:100.0%
+
+[CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (236,830 params)
+  Epoch   1/100  val=0.197
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+[CDML+LoRA] Step 2: Task 2  seed=1001
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.113
+  Epoch  25/100  val=0.629
+  Epoch  50/100  val=0.694
+  Epoch  75/100  val=0.774
+  Epoch 100/100  val=0.790
+  → T1:100.0%  T2:83.3%
+[CDML+LoRA] Step 3: Task 3  seed=1002
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.574
+  Epoch  50/100  val=0.723
+  Epoch  75/100  val=0.851
+  Epoch 100/100  val=0.894
+  → T1:100.0%  T2:83.3%  T3:89.7%
+[CDML+LoRA] Step 4: Task 4  seed=1003
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.156
+  Epoch  25/100  val=0.733
+  Epoch  50/100  val=0.756
+  Epoch  75/100  val=0.822
+  Epoch 100/100  val=0.867
+  → T1:100.0%  T2:83.3%  T3:89.7%  T4:78.9%
+
+[WGR-CDML] Step 1: Task 1  seed=1000
+  Epoch   1/100  val=0.197
+  Epoch  25/100  val=0.984
+  Epoch  50/100  val=0.984
+  Epoch  75/100  val=0.984
+  Epoch 100/100  val=0.984
+  → T1:100.0%
+  WGR buffer: stored statistics for Task 1 (8 classes)
+[WGR-CDML] Step 2: Task 2  seed=1001
+  + 240 synthetic replay samples
+  Epoch   1/100  val=0.419
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:61.0%  T2:97.4%
+  WGR buffer: stored statistics for Task 2 (9 classes)
+[WGR-CDML] Step 3: Task 3  seed=1002
+  + 510 synthetic replay samples
+  Epoch   1/100  val=0.447
+  Epoch  25/100  val=0.936
+  Epoch  50/100  val=0.936
+  Epoch  75/100  val=0.936
+  Epoch 100/100  val=0.936
+  → T1:61.0%  T2:60.3%  T3:98.3%
+  WGR buffer: stored statistics for Task 3 (7 classes)
+[WGR-CDML] Step 4: Task 4  seed=1003
+  + 720 synthetic replay samples
+  Epoch   1/100  val=0.311
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:57.1%  T2:59.0%  T3:63.8%  T4:100.0%
+  WGR buffer: stored statistics for Task 4 (6 classes)
+
+[WGR-CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (236,830 params)
+  Epoch   1/100  val=0.197
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+  WGR buffer: stored statistics for Task 1 (8 classes)
+[WGR-CDML+LoRA] Step 2: Task 2  seed=1001
+  + 240 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.177
+  Epoch  25/100  val=0.452
+  Epoch  50/100  val=0.565
+  Epoch  75/100  val=0.710
+  Epoch 100/100  val=0.742
+  → T1:100.0%  T2:71.8%
+  WGR buffer: stored statistics for Task 2 (9 classes)
+[WGR-CDML+LoRA] Step 3: Task 3  seed=1002
+  + 510 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.043
+  Epoch  25/100  val=0.426
+  Epoch  50/100  val=0.681
+  Epoch  75/100  val=0.745
+  Epoch 100/100  val=0.766
+  → T1:100.0%  T2:71.8%  T3:70.7%
+  WGR buffer: stored statistics for Task 3 (7 classes)
+[WGR-CDML+LoRA] Step 4: Task 4  seed=1003
+  + 720 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (20,960 params)
+  Epoch   1/100  val=0.244
+  Epoch  25/100  val=0.511
+  Epoch  50/100  val=0.622
+  Epoch  75/100  val=0.733
+  Epoch 100/100  val=0.778
+  → T1:100.0%  T2:71.8%  T3:70.7%  T4:61.4%
+  WGR buffer: stored statistics for Task 4 (6 classes)
+
+── Final accuracy summary (after Task 4) ──
+  Model               T1      T2      T3      T4      Avg     T1-drop
+  ─────────────────────────────────────────────────────────────────
+  CDML                 42.9%   32.1%   44.8%  100.0%   54.9%  +57.1pp
+  CDML+LoRA           100.0%   83.3%   89.7%   78.9%   88.0%   +0.0pp
+  WGR-CDML             57.1%   59.0%   63.8%  100.0%   70.0%  +42.9pp
+  WGR-CDML+LoRA       100.0%   71.8%   70.7%   61.4%   76.0%   +0.0pp
+
+
+  WISDM - LORA
+
+
+  [CDML] Step 1: Task 1  seed=1000
+  Epoch   1/100  val=0.034
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+[CDML] Step 2: Task 2  seed=1001
+  Epoch   1/100  val=0.097
+  Epoch  25/100  val=0.839
+  Epoch  50/100  val=0.903
+  Epoch  75/100  val=0.903
+  Epoch 100/100  val=0.903
+  → T1:25.6%  T2:93.5%
+[CDML] Step 3: Task 3  seed=1002
+  Epoch   1/100  val=0.207
+  Epoch  25/100  val=0.897
+  Epoch  50/100  val=0.931
+  Epoch  75/100  val=0.931
+  Epoch 100/100  val=0.931
+  → T1:32.6%  T2:54.3%  T3:97.6%
+[CDML] Step 4: Task 4  seed=1003
+  Epoch   1/100  val=0.300
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:25.6%  T2:30.4%  T3:59.5%  T4:100.0%
+
+[CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (313,603 params)
+  Epoch   1/100  val=0.034
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+[CDML+LoRA] Step 2: Task 2  seed=1001
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.323
+  Epoch  50/100  val=0.387
+  Epoch  75/100  val=0.419
+  Epoch 100/100  val=0.452
+  → T1:100.0%  T2:41.3%
+[CDML+LoRA] Step 3: Task 3  seed=1002
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.379
+  Epoch  50/100  val=0.655
+  Epoch  75/100  val=0.793
+  Epoch 100/100  val=0.793
+  → T1:100.0%  T2:41.3%  T3:88.1%
+[CDML+LoRA] Step 4: Task 4  seed=1003
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.567
+  Epoch  50/100  val=0.767
+  Epoch  75/100  val=0.767
+  Epoch 100/100  val=0.767
+  → T1:100.0%  T2:41.3%  T3:88.1%  T4:79.5%
+
+[WGR-CDML] Step 1: Task 1  seed=1000
+  Epoch   1/100  val=0.034
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[WGR-CDML] Step 2: Task 2  seed=1001
+  + 390 synthetic replay samples
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.903
+  Epoch  50/100  val=0.871
+  Epoch  75/100  val=0.871
+  Epoch 100/100  val=0.871
+  → T1:53.5%  T2:91.3%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[WGR-CDML] Step 3: Task 3  seed=1002
+  + 750 synthetic replay samples
+  Epoch   1/100  val=0.207
+  Epoch  25/100  val=0.897
+  Epoch  50/100  val=0.897
+  Epoch  75/100  val=0.897
+  Epoch 100/100  val=0.897
+  → T1:67.4%  T2:60.9%  T3:95.2%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[WGR-CDML] Step 4: Task 4  seed=1003
+  + 1140 synthetic replay samples
+  Epoch   1/100  val=0.067
+  Epoch  25/100  val=0.967
+  Epoch  50/100  val=0.967
+  Epoch  75/100  val=0.967
+  Epoch 100/100  val=0.967
+  → T1:60.5%  T2:52.2%  T3:81.0%  T4:100.0%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+[WGR-CDML+LoRA] Step 1: Task 1  seed=1000
+  Training full model (313,603 params)
+  Epoch   1/100  val=0.034
+  Epoch  25/100  val=1.000
+  Epoch  50/100  val=1.000
+  Epoch  75/100  val=1.000
+  Epoch 100/100  val=1.000
+  → T1:100.0%
+  WGR buffer: stored statistics for Task 1 (13 classes)
+[WGR-CDML+LoRA] Step 2: Task 2  seed=1001
+  + 390 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.258
+  Epoch  50/100  val=0.419
+  Epoch  75/100  val=0.613
+  Epoch 100/100  val=0.677
+  → T1:100.0%  T2:69.6%
+  WGR buffer: stored statistics for Task 2 (12 classes)
+[WGR-CDML+LoRA] Step 3: Task 3  seed=1002
+  + 750 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.276
+  Epoch  50/100  val=0.586
+  Epoch  75/100  val=0.655
+  Epoch 100/100  val=0.724
+  → T1:100.0%  T2:69.6%  T3:76.2%
+  WGR buffer: stored statistics for Task 3 (13 classes)
+[WGR-CDML+LoRA] Step 4: Task 4  seed=1003
+  + 1140 synthetic replay samples
+  Backbone base weights frozen — only LoRA adapters will be trained.
+  Training LoRA only (29,488 params)
+  Epoch   1/100  val=0.000
+  Epoch  25/100  val=0.367
+  Epoch  50/100  val=0.400
+  Epoch  75/100  val=0.567
+  Epoch 100/100  val=0.500
+  → T1:100.0%  T2:69.6%  T3:76.2%  T4:75.0%
+  WGR buffer: stored statistics for Task 4 (13 classes)
+
+── Final accuracy summary (after Task 4) ──
+  Model               T1      T2      T3      T4      Avg     T1-drop
+  ─────────────────────────────────────────────────────────────────
+  CDML                 25.6%   30.4%   59.5%  100.0%   53.9%  +74.4pp
+  CDML+LoRA           100.0%   41.3%   88.1%   79.5%   77.2%   +0.0pp
+  WGR-CDML             60.5%   52.2%   81.0%  100.0%   73.4%  +39.5pp
+  WGR-CDML+LoRA       100.0%   69.6%   76.2%   75.0%   80.2%   +0.0pp
+ 
