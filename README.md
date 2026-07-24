@@ -1,19 +1,28 @@
-# Gait_Continual_Learning
+# Privacy Attacks and Countermeasures in Biometric Gait Identification
+Gait recognition from inertial measurement unit (IMU) signals has emerged as a
+practical biometric modality for continuous and transparent user authentication.
+When deployed in practice, such systems must enrol new users over time through
+\emph{continual learning}, which introduces two intertwined challenges:
+catastrophic forgetting and privacy leakage.
 
-What have been so far that is worth mentioning:
+This thesis investigates these two problems jointly, using the Code Division
+Modulation Layer (CDML) framework as a starting point. The thesis extends this
+baseline in several directions and evaluates the resulting methods on three
+publicly available IMU datasets: WU~Gait, UCI~HAR and WISDM.
 
-PAPER REPLICATION
-- Data Analysis of the dataset
-- Replication of the paper in terms of Standard Model and comparison with CDML Model
-- Perform the MIA Attack on different models to see the privacy/accuracy tradeoff
-  
-NOVEL ADDITIONS
-- Created the knowledge distillation model, adapting the RCAT loss, and comparison with the CDML
-- Combining the CDML and the Knowledge Distillation model to get an hybrid model
-- Analyzed other methods that might improve privacy, but they didn't really work out
-- explored advanced methods based on frequencies of the data
-- Perform different attacks, both privacy related and performance degrading related, in particular IIA, Feature Space Probe and Backdoor attacks are explicative
-- Perform some defenses that deal with adding noise in the output of the model to defend against attacks that rely on the model outputs
-- Ablation studies on CMDL that deeply investigate how this approach differs from the standard method
-- Analyzed and investigate a Transformer + CMDL architecture and compared it to CNN + CMDL
+On the learning side, a knowledge distillation strategy (CDML+KD), a
+Lipschitz constraint approach (LiDER) and a wavelet-based generative replay method
+(WGR-CDML) are proposed to reduce forgetting without storing raw biometric data.
+On the architectural side, Low-Rank Adaptation (LoRA) adapters are introduced as a
+parameter-efficient continual learning mechanism. A state-space model backbone
+based on the Mamba architecture (GaitMamba) is also evaluated
+as an alternative to the convolutional baseline.
+
+Privacy is evaluated against four attack families: Membership Inference Attacks,
+Identity Inference Attacks, Feature Space Inference and Backdoor Attacks.
+
+Finally, a set of cross-dataset experiments is presented, exploring transfer
+learning between datasets, adapter warm-starting and joint multi-dataset
+classification, to assess the generalisability of the proposed framework beyond
+the single-dataset setting.
   
